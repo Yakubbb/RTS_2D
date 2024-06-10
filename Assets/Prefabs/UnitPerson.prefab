@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 5903216196642218639}
   - component: {fileID: 6293931971293759424}
   - component: {fileID: 2913229985662503753}
+  - component: {fileID: 11704137340074890}
   m_Layer: 6
   m_Name: UnitPerson
   m_TagString: Untagged
@@ -134,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Side: 0
-  EnemyLayer: 7
+  EnemyLayer: 0
   Hp: 100
   Moral: 100
   moveSpeed: 5
@@ -179,6 +180,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5
+--- !u!114 &11704137340074890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5059605875017461023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d45941c4b462e047adb392057844efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helmet: {fileID: 0}
+  toTake: {fileID: 1786383616193912858, guid: 777d06d03d1710047baaef520c8c691f, type: 3}
+  posOnHead: 1.1
 --- !u!1 &7076453497758673640
 GameObject:
   m_ObjectHideFlags: 0

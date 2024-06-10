@@ -55,7 +55,6 @@ public class Unit : MonoBehaviour
 
     void Update()
     {
-        MoveTo(targetPosition);
         HandleRotation();
         HandleAttack(EnemyTarget);
     }

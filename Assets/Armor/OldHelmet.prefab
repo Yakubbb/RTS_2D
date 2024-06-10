@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8894371689291813616}
-  - component: {fileID: 1266092786770831754}
   - component: {fileID: 1786383616193912858}
+  - component: {fileID: 3510890561254366270}
   m_Layer: 0
   m_Name: OldHelmet
   m_TagString: Untagged
@@ -33,7 +33,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1266092786770831754
+--- !u!114 &1786383616193912858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3036685242482059330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3313d6622025e545bacec70a474995d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Left: {fileID: 0}
+  Right: {fileID: 630951972, guid: c49fb8d7d38e9574bb4e33216f40272f, type: 3}
+  Front: {fileID: 2049122812, guid: c49fb8d7d38e9574bb4e33216f40272f, type: 3}
+  Back: {fileID: 1552292437, guid: c49fb8d7d38e9574bb4e33216f40272f, type: 3}
+  SpriteRenderer: {fileID: 0}
+  Name: "\u0421\u0442\u0430\u0440\u044B\u0439 \u0432\u043E\u0435\u043D\u043D\u044B\u0439
+    \u0448\u043B\u0435\u043C"
+  Hp: 15
+  ArmorClass: 2
+--- !u!212 &3510890561254366270
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,7 +94,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2049122812, guid: c49fb8d7d38e9574bb4e33216f40272f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -85,24 +106,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1786383616193912858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3036685242482059330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3313d6622025e545bacec70a474995d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Left: {fileID: 0}
-  Right: {fileID: 630951972, guid: c49fb8d7d38e9574bb4e33216f40272f, type: 3}
-  Front: {fileID: 2049122812, guid: c49fb8d7d38e9574bb4e33216f40272f, type: 3}
-  Back: {fileID: 1552292437, guid: c49fb8d7d38e9574bb4e33216f40272f, type: 3}
-  SpriteRenderer: {fileID: 0}
-  Name: "\u0421\u0442\u0430\u0440\u044B\u0439 \u0432\u043E\u0435\u043D\u043D\u044B\u0439
-    \u0448\u043B\u0435\u043C"
-  Hp: 15
-  ArmorClass: 2
