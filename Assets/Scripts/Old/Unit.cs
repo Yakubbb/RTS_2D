@@ -43,7 +43,7 @@ public class Unit : MonoBehaviour
         }
         IsArmed = true;
         MainWeapon = newWeapon;
-        GetComponent<CircleCollider2D>().radius = MainWeapon.Distance;
+        //GetComponent<CircleCollider2D>().radius = MainWeapon.Distance;
     }
     void Start()
     {
@@ -55,6 +55,7 @@ public class Unit : MonoBehaviour
 
     void Update()
     {
+        MoveTo(targetPosition);
         HandleRotation();
         HandleAttack(EnemyTarget);
     }
@@ -104,6 +105,6 @@ public class Unit : MonoBehaviour
         {
             EnemyTarget = enemy;
         }
-        MainWeapon.Shoot(enemy);
+        //MainWeapon.Shoot(enemy);
     }
 }

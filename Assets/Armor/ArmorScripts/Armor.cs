@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Helmet : MonoBehaviour
+public abstract class Armor : MonoBehaviour
 {
     public Sprite Left;
     public Sprite Right;
@@ -12,44 +12,51 @@ public class Helmet : MonoBehaviour
     public string Name;
     public int Hp;
     public int ArmorClass;
-    public void LookRight(){
+    public void LookRight()
+    {
         SpriteRenderer.flipX = false;
         SpriteRenderer.sprite = Right;
     }
-    public void LookLeft(){
-        if(Left=null){
+    public void LookLeft()
+    {
+        if (Left = null)
+        {
             SpriteRenderer.sprite = Right;
             SpriteRenderer.flipX = true;
         }
-        else{
+        else
+        {
             SpriteRenderer.sprite = Left;
         }
     }
-    public void LookFront(){
+    public void LookFront()
+    {
         SpriteRenderer.flipX = false;
         SpriteRenderer.sprite = Front;
     }
-    public void LookBehind(){
+    public void LookBehind()
+    {
         SpriteRenderer.flipX = false;
         SpriteRenderer.sprite = Back;
     }
-    void Start()
+        void Start()
     {
         SpriteRenderer = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
-        
+
     }
-        public void TryPenetrate(int inputDamage, out int outputDamage)
+    public void TryPenetrate(int inputDamage, out int outputDamage)
     {
         if (Hp <= inputDamage)
         {
             outputDamage = inputDamage - Hp;
             Hp = 0;
         }
-        else{
-            outputDamage = inputDamage/Random.Range(1,10)-Hp;
+        else
+        {
+            outputDamage = inputDamage / Random.Range(1, 10) - Hp;
             Hp -= outputDamage;
         }
     }

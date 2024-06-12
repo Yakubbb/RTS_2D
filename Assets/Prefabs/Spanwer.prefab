@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3916549913784812215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6153036767681725326}
+  - component: {fileID: 5208112831913288837}
+  m_Layer: 0
+  m_Name: Spanwer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6153036767681725326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3916549913784812215}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5208112831913288837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3916549913784812215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ead50fc56a0da4383795edfe03354c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delay: 5
+  LastSpawn: 0
+  team: 0
+  unit: {fileID: 5059605875017461023, guid: a66968e09f8dd244bb8eddeae15089ef, type: 3}
+  armors:
+  - {fileID: 895080179575177130, guid: 4565ee5a2b4039049a54a0d4341511d9, type: 3}
+  - {fileID: 895080179575177130, guid: 43bb8d5dc8b451f48848813634d9f0c0, type: 3}
+  - {fileID: 895080179575177130, guid: cc0f185200a787047a9af2c0ea2cae7b, type: 3}
+  helmets:
+  - {fileID: 3036685242482059330, guid: 7b66c20f24770564c8944b6b2cd22b62, type: 3}
+  - {fileID: 3036685242482059330, guid: 777d06d03d1710047baaef520c8c691f, type: 3}
+  - {fileID: 3036685242482059330, guid: 778dc1d7abbdbe04e9423c4a912dd959, type: 3}
+  - {fileID: 3036685242482059330, guid: 31f0ae8cd48694c45b95f23c44188bb8, type: 3}
