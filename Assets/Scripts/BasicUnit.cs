@@ -159,6 +159,7 @@ public class BasicUnit : MonoBehaviour
             {
                 Debug.Log("Врага нет", this);
                 GetWeaponInIdleState();
+                return;
             }
             AimAt(enemy.transform.position);
             Shoot();
