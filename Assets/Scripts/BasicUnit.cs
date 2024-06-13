@@ -17,7 +17,7 @@ public class BasicUnit : MonoBehaviour
     public Team Side;
     public int Speed;
     public Vector3 GoToPoint;
-    public  Inventory UnitInventory;
+    public Inventory UnitInventory;
     BasicUnit enemy;
     public Helmet helmet;
     public BodyArmor bodyArmor;
@@ -26,7 +26,7 @@ public class BasicUnit : MonoBehaviour
     private bool isInventoryUpdated;
 
     private CircleCollider2D atackRange;
-    
+
     bool IsArmed()
     {
         return weapon != null;
@@ -57,15 +57,20 @@ public class BasicUnit : MonoBehaviour
         this.weapon = UnitInventory.weapon;
         Debug.Log(this.weapon.spriteRenderer);
     }
-    void Start()
+    void Awake()
     {
         atackRange = GetComponent<CircleCollider2D>();
         UnitInventory = GetComponent<Inventory>();
+        Debug.Log("ЮНИТ СОЗДАН", this);
+    }
+    void Start()
+    {
         GoToPoint = new Vector3(this.transform.position.x + 1, this.transform.position.y + 10, this.transform.position.z);
         if (IsArmed())
         {
             GetWeaponInIdleState();
         }
+
     }
     private void HandleRotation(Vector3 rotationPoint)
     {
@@ -113,7 +118,8 @@ public class BasicUnit : MonoBehaviour
         var enemy = collision.gameObject.GetComponent<BasicUnit>();
         if (enemy == null | enemy.Side == this.Side | enemy.isDead)
         {
-            if(enemy == this.enemy){
+            if (enemy == this.enemy)
+            {
                 this.enemy = null;
             }
             return;

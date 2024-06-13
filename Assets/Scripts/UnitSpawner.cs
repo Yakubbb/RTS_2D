@@ -11,7 +11,6 @@ public class UnitSpawner : MonoBehaviour
 
     public GameObject[] armors;
     public GameObject[] helmets;
-
     void Start()
     {
 
@@ -23,15 +22,11 @@ public class UnitSpawner : MonoBehaviour
             Debug.Log(Time.time - LastSpawn);
             float x = Random.Range(this.transform.position.x - 10, this.transform.position.x + 10);
             float y = Random.Range(this.transform.position.y - 10, this.transform.position.y + 10);
-            //GameObject randomArmor = Instantiate(armors[Random.Range(0, armors.Length - 1)], new Vector3(x, y, 0), Quaternion.identity);
             BasicUnit newUnit = Instantiate(unit, new Vector3(x, y, 0), Quaternion.identity).GetComponent<BasicUnit>();
-            newUnit.Side = team;
-            BodyArmor randArmor = armors[Random.Range(0, armors.Length - 1)].gameObject.GetComponent<BodyArmor>();
-            Helmet randHelmet = helmets[Random.Range(0, helmets.Length - 1)].gameObject.GetComponent<Helmet>();
-            Debug.Log(randArmor);
-            Debug.Log(randHelmet);
-           // newUnit.UnitInventory.TakeArmor(randArmor);
-           // newUnit.UnitInventory.TakeHelmet(randHelmet);
+            Armor a = armors[Random.Range(0, armors.Length - 1)].GetComponent<Armor>();
+            Helmet h = helmets[Random.Range(0, helmets.Length - 1)].GetComponent<Helmet>();
+            newUnit.UnitInventory.TakeArmor(a);
+            newUnit.UnitInventory.TakeHelmet(h);
             LastSpawn = Time.time;
         }
         /*
