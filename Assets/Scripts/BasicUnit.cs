@@ -33,7 +33,9 @@ public class BasicUnit : MonoBehaviour
     }
     public void Die()
     {
-        UnitInventory.DropWeapon();
+        if(IsArmed()){
+        UnitInventory.Drop(weapon.gameObject);
+        }
         isDead = true;
     }
     public void TakeDamage(int damage)
@@ -55,7 +57,6 @@ public class BasicUnit : MonoBehaviour
         this.helmet = UnitInventory.helmet;
         this.bodyArmor = UnitInventory.armor;
         this.weapon = UnitInventory.weapon;
-        Debug.Log(this.weapon.spriteRenderer);
     }
     void Awake()
     {

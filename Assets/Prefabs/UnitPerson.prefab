@@ -198,9 +198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d45941c4b462e047adb392057844efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helmet: {fileID: 1786383616193912858, guid: 777d06d03d1710047baaef520c8c691f, type: 3}
-  armor: {fileID: 5921783612157764889, guid: 4565ee5a2b4039049a54a0d4341511d9, type: 3}
-  weapon: {fileID: 3078483202074468296, guid: 3d93df86bc8a14f4aa192e0cc1797065, type: 3}
+  helmet: {fileID: 0}
+  armor: {fileID: 0}
+  weapon: {fileID: 0}
   posOnHead: 1
   posOnBody: 0.07
   weaponPos: 0
@@ -216,16 +216,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4adfd33cb31053f40bbb2cfab651508a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  avalibleEnemies: []
   Accuracy: 100
   Hp: 100
   Name: Aboba
   Side: 0
   Speed: 1
   GoToPoint: {x: 0, y: 0, z: 0}
+  UnitInventory: {fileID: 0}
   helmet: {fileID: 0}
   bodyArmor: {fileID: 0}
   weapon: {fileID: 0}
-  IsDead: 0
+  isDead: 0
 --- !u!1 &7076453497758673640
 GameObject:
   m_ObjectHideFlags: 0
