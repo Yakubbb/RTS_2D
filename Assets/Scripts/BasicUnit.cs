@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BasicUnit : MonoBehaviour
 {
+    public DecalsController blood;
     public BasicUnit[] avalibleEnemies;
     public enum Team
     {
@@ -33,9 +34,21 @@ public class BasicUnit : MonoBehaviour
     }
     public void Die()
     {
-        if(IsArmed()){
-        UnitInventory.Drop(weapon.gameObject);
+        if (Random.Range(0, 10) > 5)
+        {
+            this.transform.rotation = Quaternion.Euler(0, 0, 90);
         }
+        else
+        {
+            this.transform.rotation = Quaternion.Euler(0, 0, -90);
+        }
+        if (IsArmed())
+        {
+            UnitInventory.Drop(weapon.gameObject);
+        }
+        Vector3 v3 = this.transform.position;
+        v3.y -=0.289f;
+        Instantiate(blood,v3,Quaternion.identity).SpawnBloodPool();
         isDead = true;
     }
     public void TakeDamage(int damage)
@@ -62,7 +75,7 @@ public class BasicUnit : MonoBehaviour
     {
         atackRange = GetComponent<CircleCollider2D>();
         UnitInventory = GetComponent<Inventory>();
-        Debug.Log("ЮНИТ СОЗДАН", this);
+        //Debug.Log("ЮНИТ СОЗДАН", this);
     }
     void Start()
     {
@@ -126,7 +139,7 @@ public class BasicUnit : MonoBehaviour
             return;
         }
         this.enemy = enemy;
-        Debug.Log($"вижу врага {this.enemy.Side}");
+        //Debug.Log($"вижу врага {this.enemy.Side}");
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -149,7 +162,7 @@ public class BasicUnit : MonoBehaviour
             if (IsHit)
             {
                 enemy.TakeDamage(weapon.Damage);
-                Debug.Log("попал по ", enemy);
+                //.Log("попал по ", enemy);
             }
         }
     }
@@ -164,8 +177,11 @@ public class BasicUnit : MonoBehaviour
         {
             if (enemy == null)
             {
-                Debug.Log("Врага нет", this);
                 GetWeaponInIdleState();
+                return;
+            }
+            if(enemy.isDead){
+                enemy =null;
                 return;
             }
             AimAt(enemy.transform.position);
@@ -175,6 +191,10 @@ public class BasicUnit : MonoBehaviour
 
     void Update()
     {
+        if (isDead)
+        {
+            return;
+        }
         if (!isInventoryUpdated)
         {
             UpdateInventory();
@@ -183,10 +203,6 @@ public class BasicUnit : MonoBehaviour
         if (Hp < 1)
         {
             Die();
-        }
-        if (isDead)
-        {
-            return;
         }
         HandleMovement();
         HandleAttack();

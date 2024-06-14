@@ -18,17 +18,17 @@ public class Inventory : MonoBehaviour
             return;
         }
         GameObject droping;
-        if (item == helmet.gameObject)
+        if (helmet != null && item == helmet.gameObject)
         {
             droping = helmet.gameObject;
             helmet = null;
         }
-        else if (item == armor.gameObject)
+        else if (armor!= null && item == armor.gameObject)
         {
-            droping = helmet.gameObject;
+            droping = armor.gameObject;
             armor = null;
         }
-        else if (item == weapon.gameObject)
+        else if (weapon!=null && item == weapon.gameObject)
         {
             droping = weapon.gameObject;
             weapon = null;
@@ -37,7 +37,7 @@ public class Inventory : MonoBehaviour
         {
             return;
         }
-        Instantiate(droping, new Vector3(this.transform.position.x + Random.Range(-2, 2), this.transform.position.y + +Random.Range(-2, 2), this.transform.position.z + Random.Range(-2, 2)), Quaternion.identity);
+        Instantiate(droping, new Vector3(this.transform.position.x + Random.Range(-1.5f, 1.5f), this.transform.position.y + +Random.Range(-1.5f, 1.5f), this.transform.position.z + Random.Range(-2, 2)), Quaternion.identity);
         Destroy(droping);
     }
     public void Equip(GameObject obj, bool dropOld = true)
@@ -54,23 +54,13 @@ public class Inventory : MonoBehaviour
         if (obj.GetComponent<Helmet>() != null)
         {
             if (dropOld) Drop(helmet.gameObject);
-            this.helmet = Instantiate(obj, new Vector3(this.transform.position.x, this.transform.position.y + posOnHead, this.transform.position.z), Quaternion.identity, this.transform).GetComponent<Helmet>();
+            this.helmet = Instantiate(obj, new Vector3(this.transform.position.x, this.transform.position.y + obj.GetComponent<Armor>().PosOnUnit, this.transform.position.z), Quaternion.identity, this.transform).GetComponent<Helmet>();
         }
         if (obj.GetComponent<BodyArmor>() != null)
         {
             if (dropOld) Drop(armor.gameObject);
-            this.armor = Instantiate(obj, new Vector3(this.transform.position.x, this.transform.position.y + posOnBody, this.transform.position.z), Quaternion.identity, this.transform).GetComponent<BodyArmor>();
+            this.armor = Instantiate(obj, new Vector3(this.transform.position.x, this.transform.position.y + obj.GetComponent<Armor>().PosOnUnit, this.transform.position.z), Quaternion.identity, this.transform).GetComponent<BodyArmor>();
         }
-    }
-    public void DropWeapon()
-    {
-        if (weapon == null)
-        {
-            return;
-        }
-        Instantiate(weapon.gameObject, new Vector3(this.transform.position.x + Random.Range(-2, 2), this.transform.position.y + +Random.Range(-2, 2), this.transform.position.z + Random.Range(-2, 2)), Quaternion.identity);
-        Destroy(weapon.gameObject);
-        weapon = null;
     }
     void EquipStartLoadut()
     {

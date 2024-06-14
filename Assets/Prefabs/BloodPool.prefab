@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3036685242482059330
+--- !u!1 &7727004927503907670
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8894371689291813616}
-  - component: {fileID: 1786383616193912858}
-  - component: {fileID: 3510890561254366270}
+  - component: {fileID: 6670158909298318561}
+  - component: {fileID: 6579359057517787529}
+  - component: {fileID: 4141019709379384408}
   m_Layer: 0
-  m_Name: GoodHelmet
+  m_Name: BloodPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8894371689291813616
+--- !u!4 &6670158909298318561
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3036685242482059330}
+  m_GameObject: {fileID: 7727004927503907670}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,35 +33,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1786383616193912858
+--- !u!114 &6579359057517787529
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3036685242482059330}
+  m_GameObject: {fileID: 7727004927503907670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3313d6622025e545bacec70a474995d, type: 3}
+  m_Script: {fileID: 11500000, guid: 67addbb27f9990a47a3c17649860a586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PosOnUnit: 0.97
-  Left: {fileID: 0}
-  Right: {fileID: 1683480957617640250, guid: d237fb4edd9614d4d87cfb7ab822b460, type: 3}
-  Front: {fileID: 9068675093705500001, guid: d237fb4edd9614d4d87cfb7ab822b460, type: 3}
-  Back: {fileID: 6320081234448671844, guid: d237fb4edd9614d4d87cfb7ab822b460, type: 3}
-  SpriteRenderer: {fileID: 0}
-  Name: "\u0421\u043E\u0432\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0439 \u0432\u043E\u0435\u043D\u043D\u044B\u0439
-    \u0448\u043B\u0435\u043C"
-  Hp: 30
-  ArmorClass: 4
---- !u!212 &3510890561254366270
+  renderer: {fileID: 0}
+  Sprites:
+  - {fileID: -5674331654957753723, guid: 7da2b18e26889404f90ef20ac3d06ad8, type: 3}
+  - {fileID: -2688932260182331282, guid: 7da2b18e26889404f90ef20ac3d06ad8, type: 3}
+  - {fileID: -3545052216047579255, guid: 7da2b18e26889404f90ef20ac3d06ad8, type: 3}
+  - {fileID: -2211517186776809754, guid: 7da2b18e26889404f90ef20ac3d06ad8, type: 3}
+  SpawnTime: 0
+  IsSpawned: 0
+--- !u!212 &4141019709379384408
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3036685242482059330}
+  m_GameObject: {fileID: 7727004927503907670}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -97,15 +95,15 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 9068675093705500001, guid: d237fb4edd9614d4d87cfb7ab822b460, type: 3}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 0.7}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Armor : MonoBehaviour
 {
+    public float PosOnUnit;
     public Sprite Left;
     public Sprite Right;
     public Sprite Front;

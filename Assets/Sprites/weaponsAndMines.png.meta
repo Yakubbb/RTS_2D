@@ -1,0 +1,714 @@
+fileFormatVersion: 2
+guid: 410df32d9a1a0e94abfd1413cce07a8c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5389326232998336429
+    second: weaponsAndMines_0
+  - first:
+      213: -484324862419872154
+    second: weaponsAndMines_1
+  - first:
+      213: 2532586380989411097
+    second: weaponsAndMines_2
+  - first:
+      213: 5450485865803568708
+    second: weaponsAndMines_3
+  - first:
+      213: 6348210757947790482
+    second: weaponsAndMines_4
+  - first:
+      213: -5568065096036165703
+    second: weaponsAndMines_5
+  - first:
+      213: 658445699420738441
+    second: weaponsAndMines_6
+  - first:
+      213: 8487871072649478508
+    second: weaponsAndMines_7
+  - first:
+      213: 8154404347169424487
+    second: weaponsAndMines_8
+  - first:
+      213: -5260314575082885491
+    second: weaponsAndMines_9
+  - first:
+      213: -9185565113373872550
+    second: weaponsAndMines_10
+  - first:
+      213: -1739811590152722582
+    second: weaponsAndMines_11
+  - first:
+      213: -3269621681073256554
+    second: weaponsAndMines_12
+  - first:
+      213: 165220400658077565
+    second: weaponsAndMines_13
+  - first:
+      213: -1298216159286972875
+    second: weaponsAndMines_14
+  - first:
+      213: 262136924706181134
+    second: weaponsAndMines_15
+  - first:
+      213: -367125462005624962
+    second: weaponsAndMines_16
+  - first:
+      213: -2488390784436121906
+    second: weaponsAndMines_17
+  - first:
+      213: -4954454221563183045
+    second: weaponsAndMines_18
+  - first:
+      213: -3526759913438213260
+    second: weaponsAndMines_19
+  - first:
+      213: -7928554406907200070
+    second: weaponsAndMines_20
+  - first:
+      213: -4758781603520542857
+    second: weaponsAndMines_21
+  - first:
+      213: -6798235808083032083
+    second: weaponsAndMines_22
+  - first:
+      213: 7941033506834214934
+    second: weaponsAndMines_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: weaponsAndMines_0
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 432
+        width: 276
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 358a07f48544535b0800000000000000
+      internalID: -5389326232998336429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_1
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 414
+        width: 303
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 666d29b8a155749f0800000000000000
+      internalID: -484324862419872154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_2
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 423
+        width: 354
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91fadd135ed852320800000000000000
+      internalID: 2532586380989411097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_3
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 342
+        width: 65
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 446528c540404ab40800000000000000
+      internalID: 5450485865803568708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_4
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 334
+        width: 92
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2949ac2dc00691850800000000000000
+      internalID: 6348210757947790482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_5
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 331
+        width: 82
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b75388cb424ab2b0800000000000000
+      internalID: -5568065096036165703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_6
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 269
+        width: 236
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9835bd100e4432900800000000000000
+      internalID: 658445699420738441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_7
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 261
+        width: 208
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c61069815c9fac570800000000000000
+      internalID: 8487871072649478508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_8
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 242
+        width: 273
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7644fe3cc834a2170800000000000000
+      internalID: 8154404347169424487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_9
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 154
+        width: 49
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8eef59a3cb9ff6b0800000000000000
+      internalID: -5260314575082885491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_10
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 153
+        width: 53
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e21245231568080800000000000000
+      internalID: -9185565113373872550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_11
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 138
+        width: 53
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a67e6d0a392fad7e0800000000000000
+      internalID: -1739811590152722582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_12
+      rect:
+        serializedVersion: 2
+        x: 1544
+        y: 128
+        width: 57
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69786bd7768ff92d0800000000000000
+      internalID: -3269621681073256554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_13
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 130
+        width: 57
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d775fda341bfa4200800000000000000
+      internalID: 165220400658077565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_14
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 128
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53e2708084fcbfde0800000000000000
+      internalID: -1298216159286972875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_15
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 46
+        width: 102
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0010a7e42c43a300800000000000000
+      internalID: 262136924706181134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_16
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 42
+        width: 108
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7f47216655b7eaf0800000000000000
+      internalID: -367125462005624962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_17
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 46
+        width: 96
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ece445ff3c5777dd0800000000000000
+      internalID: -2488390784436121906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_18
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 72
+        width: 49
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b30cac3a22e3e3bb0800000000000000
+      internalID: -4954454221563183045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_19
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 75
+        width: 80
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b8d675b8e6e0fc0800000000000000
+      internalID: -3526759913438213260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_20
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 71
+        width: 97
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abd30f136cd18f190800000000000000
+      internalID: -7928554406907200070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_21
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 63
+        width: 59
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7778e7e385965fdb0800000000000000
+      internalID: -4758781603520542857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_22
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 64
+        width: 57
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de7ced71d80d7a1a0800000000000000
+      internalID: -6798235808083032083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weaponsAndMines_23
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 63
+        width: 33
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 610f35ca6e7343e60800000000000000
+      internalID: 7941033506834214934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      weaponsAndMines_0: -5389326232998336429
+      weaponsAndMines_1: -484324862419872154
+      weaponsAndMines_10: -9185565113373872550
+      weaponsAndMines_11: -1739811590152722582
+      weaponsAndMines_12: -3269621681073256554
+      weaponsAndMines_13: 165220400658077565
+      weaponsAndMines_14: -1298216159286972875
+      weaponsAndMines_15: 262136924706181134
+      weaponsAndMines_16: -367125462005624962
+      weaponsAndMines_17: -2488390784436121906
+      weaponsAndMines_18: -4954454221563183045
+      weaponsAndMines_19: -3526759913438213260
+      weaponsAndMines_2: 2532586380989411097
+      weaponsAndMines_20: -7928554406907200070
+      weaponsAndMines_21: -4758781603520542857
+      weaponsAndMines_22: -6798235808083032083
+      weaponsAndMines_23: 7941033506834214934
+      weaponsAndMines_3: 5450485865803568708
+      weaponsAndMines_4: 6348210757947790482
+      weaponsAndMines_5: -5568065096036165703
+      weaponsAndMines_6: 658445699420738441
+      weaponsAndMines_7: 8487871072649478508
+      weaponsAndMines_8: 8154404347169424487
+      weaponsAndMines_9: -5260314575082885491
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

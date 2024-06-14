@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3313d6622025e545bacec70a474995d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PosOnUnit: 0.99
   Left: {fileID: 0}
   Right: {fileID: 7426772774095495978, guid: d237fb4edd9614d4d87cfb7ab822b460, type: 3}
   Front: {fileID: 8075672930415982973, guid: d237fb4edd9614d4d87cfb7ab822b460, type: 3}

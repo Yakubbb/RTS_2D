@@ -141,11 +141,15 @@ PrefabInstance:
       objectReference: {fileID: 3078483202074468296, guid: 83e180e527c70b34789b79018e0ef9f1, type: 3}
     - target: {fileID: 3916606680537841759, guid: a66968e09f8dd244bb8eddeae15089ef, type: 3}
       propertyPath: Side
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5059605875017461023, guid: a66968e09f8dd244bb8eddeae15089ef, type: 3}
       propertyPath: m_Name
       value: UnitPerson (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299961992218204918, guid: a66968e09f8dd244bb8eddeae15089ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 6939668250056184301, guid: a66968e09f8dd244bb8eddeae15089ef, type: 3}
       propertyPath: m_LocalPosition.x
