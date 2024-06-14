@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DecalsController : MonoBehaviour
+public class BloodPool : MonoBehaviour
 {
     public SpriteRenderer renderer;
     public Sprite[] Sprites;

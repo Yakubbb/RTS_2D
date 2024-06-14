@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BasicUnit : MonoBehaviour
 {
-    public DecalsController blood;
+
     public BasicUnit[] avalibleEnemies;
     public enum Team
     {
@@ -27,6 +27,7 @@ public class BasicUnit : MonoBehaviour
     private bool isInventoryUpdated;
 
     private CircleCollider2D atackRange;
+    private DecalsSpawner decals;
 
     bool IsArmed()
     {
@@ -46,9 +47,7 @@ public class BasicUnit : MonoBehaviour
         {
             UnitInventory.Drop(weapon.gameObject);
         }
-        Vector3 v3 = this.transform.position;
-        v3.y -=0.289f;
-        Instantiate(blood,v3,Quaternion.identity).SpawnBloodPool();
+        decals.SpawnPool(this.transform.position);
         isDead = true;
     }
     public void TakeDamage(int damage)
@@ -62,7 +61,12 @@ public class BasicUnit : MonoBehaviour
         {
             helmet.TryPenetrate(damage, out lastDamage);
         }
+        if (damage > 20)
+        {
+            decals.SpawnSplash(this.transform.position);
+        }
         Hp -= damage;
+
 
     }
     void UpdateInventory()
@@ -73,6 +77,7 @@ public class BasicUnit : MonoBehaviour
     }
     void Awake()
     {
+        decals = FindFirstObjectByType<DecalsSpawner>();
         atackRange = GetComponent<CircleCollider2D>();
         UnitInventory = GetComponent<Inventory>();
         //Debug.Log("ЮНИТ СОЗДАН", this);
@@ -180,8 +185,9 @@ public class BasicUnit : MonoBehaviour
                 GetWeaponInIdleState();
                 return;
             }
-            if(enemy.isDead){
-                enemy =null;
+            if (enemy.isDead)
+            {
+                enemy = null;
                 return;
             }
             AimAt(enemy.transform.position);

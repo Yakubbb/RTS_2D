@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6153036767681725326}
   - component: {fileID: 5208112831913288837}
   m_Layer: 0
-  m_Name: Spanwer
+  m_Name: UnitSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,11 +49,14 @@ MonoBehaviour:
   team: 0
   unit: {fileID: 5059605875017461023, guid: a66968e09f8dd244bb8eddeae15089ef, type: 3}
   armors:
-  - {fileID: 895080179575177130, guid: 4565ee5a2b4039049a54a0d4341511d9, type: 3}
-  - {fileID: 895080179575177130, guid: 43bb8d5dc8b451f48848813634d9f0c0, type: 3}
-  - {fileID: 895080179575177130, guid: cc0f185200a787047a9af2c0ea2cae7b, type: 3}
+  - {fileID: 5921783612157764889, guid: 4565ee5a2b4039049a54a0d4341511d9, type: 3}
+  - {fileID: 5921783612157764889, guid: 43bb8d5dc8b451f48848813634d9f0c0, type: 3}
+  - {fileID: 5921783612157764889, guid: cc0f185200a787047a9af2c0ea2cae7b, type: 3}
   helmets:
-  - {fileID: 3036685242482059330, guid: 7b66c20f24770564c8944b6b2cd22b62, type: 3}
-  - {fileID: 3036685242482059330, guid: 777d06d03d1710047baaef520c8c691f, type: 3}
-  - {fileID: 3036685242482059330, guid: 778dc1d7abbdbe04e9423c4a912dd959, type: 3}
-  - {fileID: 3036685242482059330, guid: 31f0ae8cd48694c45b95f23c44188bb8, type: 3}
+  - {fileID: 1786383616193912858, guid: 7b66c20f24770564c8944b6b2cd22b62, type: 3}
+  - {fileID: 1786383616193912858, guid: 777d06d03d1710047baaef520c8c691f, type: 3}
+  - {fileID: 1786383616193912858, guid: 778dc1d7abbdbe04e9423c4a912dd959, type: 3}
+  - {fileID: 1786383616193912858, guid: 31f0ae8cd48694c45b95f23c44188bb8, type: 3}
+  weapons:
+  - {fileID: 3078483202074468296, guid: 3d93df86bc8a14f4aa192e0cc1797065, type: 3}
+  - {fileID: 3078483202074468296, guid: 83e180e527c70b34789b79018e0ef9f1, type: 3}

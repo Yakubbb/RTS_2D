@@ -48,17 +48,17 @@ public class Inventory : MonoBehaviour
         }
         if (obj.GetComponent<Weapon>() != null)
         {
-            if (dropOld) Drop(weapon.gameObject);
+            if (weapon != null && dropOld) Drop(weapon.gameObject);
             this.weapon = Instantiate(obj, new Vector3(this.transform.position.x, this.transform.position.y + weaponPos, this.transform.position.z), Quaternion.identity, this.transform).GetComponent<Weapon>();
         }
         if (obj.GetComponent<Helmet>() != null)
         {
-            if (dropOld) Drop(helmet.gameObject);
+            if (helmet!=null && dropOld) Drop(helmet.gameObject);
             this.helmet = Instantiate(obj, new Vector3(this.transform.position.x, this.transform.position.y + obj.GetComponent<Armor>().PosOnUnit, this.transform.position.z), Quaternion.identity, this.transform).GetComponent<Helmet>();
         }
         if (obj.GetComponent<BodyArmor>() != null)
         {
-            if (dropOld) Drop(armor.gameObject);
+            if (armor != null && dropOld) Drop(armor.gameObject);
             this.armor = Instantiate(obj, new Vector3(this.transform.position.x, this.transform.position.y + obj.GetComponent<Armor>().PosOnUnit, this.transform.position.z), Quaternion.identity, this.transform).GetComponent<BodyArmor>();
         }
     }

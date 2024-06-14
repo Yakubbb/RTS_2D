@@ -216,7 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4adfd33cb31053f40bbb2cfab651508a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blood: {fileID: 6579359057517787529, guid: 5b212b7dd7729eb45ae3d8589a1eb285, type: 3}
   avalibleEnemies: []
   Accuracy: 100
   Hp: 100
