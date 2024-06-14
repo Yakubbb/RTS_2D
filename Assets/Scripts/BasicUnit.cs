@@ -10,7 +10,8 @@ public class BasicUnit : MonoBehaviour
     {
         usec,
         bear,
-        scav
+        scav,
+        gays
     }
     public int Accuracy = 100;
     public int Hp = 100;
@@ -128,7 +129,9 @@ public class BasicUnit : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if(this.enemy != null){
+            return;
+        }
         if (collision.gameObject.layer != 6)
         {
             return;
