@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67addbb27f9990a47a3c17649860a586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particles: {fileID: 1528211539746110811, guid: 97d324a99492639439b6542df1e8d3c3, type: 3}
   renderer: {fileID: 0}
   Sprites:
   - {fileID: -5674331654957753723, guid: 7da2b18e26889404f90ef20ac3d06ad8, type: 3}
@@ -52,7 +53,7 @@ MonoBehaviour:
   - {fileID: -3545052216047579255, guid: 7da2b18e26889404f90ef20ac3d06ad8, type: 3}
   - {fileID: -2211517186776809754, guid: 7da2b18e26889404f90ef20ac3d06ad8, type: 3}
   SpawnTime: 0
-  IsSpawned: 0
+  ItsProcessing: 0
 --- !u!212 &4141019709379384408
 SpriteRenderer:
   m_ObjectHideFlags: 0

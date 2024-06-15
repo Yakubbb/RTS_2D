@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class BloodPool : MonoBehaviour
 {
+    public GameObject particles;
     public SpriteRenderer renderer;
     public Sprite[] Sprites;
     public float SpawnTime;
-    public bool IsSpawned = false;
+    public bool ItsProcessing = false;
     public void SpawnBloodPool()
     {
-        IsSpawned = true;
+        ItsProcessing = true;
+        particles = Instantiate(particles,this.transform.position,Quaternion.identity);
     }
     void HandlePool()
     {
-        if (IsSpawned)
+        if (ItsProcessing)
         {
             Vector3 newScale = this.transform.localScale;
             if (newScale.x <= 1)
@@ -26,6 +28,10 @@ public class BloodPool : MonoBehaviour
                 newScale.y += 0.0001f;
             }
             this.transform.localScale = newScale;
+            if(newScale.x >= 1 && newScale.y>=1){
+                ItsProcessing = false;
+                Destroy(particles);
+            }
         }
     }
     void Awake()
