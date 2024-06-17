@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,7 @@ public class Weapon : MonoBehaviour
     public float DefaultAngle;
     public GameObject shootingPoint = null;
     private int interval;
+    private float localScaleY;
     public bool IsReadyToShoot()
     {
         if (Time.time - LastShoot > interval)
@@ -34,9 +36,28 @@ public class Weapon : MonoBehaviour
         }
         return false;
     }
+    public void GetWeaponInIdleState()
+    {
+        MakeWeaponLookLeft();
+        this.transform.rotation = Quaternion.Euler(0, 0, this.DefaultAngle);
+
+    }
+    public void MakeWeaponLookLeft()
+    {
+        var vec3 = this.transform.localScale;
+        vec3.y = this.localScaleY;
+        this.transform.localScale = vec3;
+    }
+    public void MakeWeaponLookRight()
+    {
+        var vec3 = this.transform.localScale;
+        vec3.y = -this.localScaleY;
+        this.transform.localScale = vec3;
+    }
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        localScaleY = Math.Abs(this.transform.localScale.y);
     }
     void Start()
     {

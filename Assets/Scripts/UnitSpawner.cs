@@ -6,9 +6,8 @@ public class UnitSpawner : MonoBehaviour
 {
     public int Delay;
     public float LastSpawn;
-    public BasicUnit.Team team;
+    public UnitBody.Team team;
     public GameObject unit;
-
     public BodyArmor[] armors;
     public Helmet[] helmets;
     public Weapon[] weapons;
@@ -23,7 +22,7 @@ public class UnitSpawner : MonoBehaviour
             Debug.Log(Time.time - LastSpawn);
             float x = Random.Range(this.transform.position.x - 10, this.transform.position.x + 10);
             float y = Random.Range(this.transform.position.y - 10, this.transform.position.y + 10);
-            BasicUnit newUnit = Instantiate(unit, new Vector3(x, y, 0), Quaternion.identity).GetComponent<BasicUnit>();
+            UnitBody newUnit = Instantiate(unit, new Vector3(x, y, 0), Quaternion.identity,this.transform).GetComponent<UnitBody>();
             newUnit.UnitInventory.Equip(armors[Random.Range(0, armors.Length)].gameObject);
             newUnit.UnitInventory.Equip(helmets[Random.Range(0, helmets.Length)].gameObject);
             newUnit.UnitInventory.Equip(weapons[Random.Range(0, weapons.Length)].gameObject);
