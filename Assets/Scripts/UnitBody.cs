@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 
 public class UnitBody : MonoBehaviour
 {
+    public string UnitName = "aboba";
     public enum Team
     {
         usec,
@@ -11,6 +13,7 @@ public class UnitBody : MonoBehaviour
         scav,
         aboba
     }
+    public int LastTakenDamage;
     public bool IsDead;
     public int Accuracy = 100;
     public int Hp = 100;
@@ -166,14 +169,14 @@ public class UnitBody : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        int lastDamage = damage;
+        LastTakenDamage = damage;
         if (bodyArmor != null)
         {
-            bodyArmor.TryPenetrate(damage, out lastDamage);
+            bodyArmor.TryPenetrate(damage, out LastTakenDamage);
         }
         if (helmet != null)
         {
-            helmet.TryPenetrate(damage, out lastDamage);
+            helmet.TryPenetrate(damage, out LastTakenDamage);
         }
         if (damage > 20)
         {
@@ -183,5 +186,15 @@ public class UnitBody : MonoBehaviour
             }
         }
         Hp -= damage;
+    }
+    public float GetArmorValue(){
+        float value = 0;
+        if(this.helmet != null){
+            value+=helmet.Hp;
+        }
+        if(this.bodyArmor != null){
+            value+=bodyArmor.Hp;
+        }
+        return value;
     }
 }

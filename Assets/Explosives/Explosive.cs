@@ -12,7 +12,7 @@ public class Explosive : MonoBehaviour
     public void Activate(Vector3 aim)
     {
         isActivated = true;
-
+        this.aim = aim; 
     }
     private void HandleThrowing()
     {
