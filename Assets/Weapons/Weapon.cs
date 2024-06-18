@@ -13,24 +13,21 @@ public class Weapon : MonoBehaviour
     }
     public string Name;
     public int Damage;
-    public int FireRate;
+    [Range(1f, 750f)]
+    public float FireRate;
     public int Range;
     public Ammo AmmoType;
-    public Sprite Model;
+    private Sprite Model;
     public SpriteRenderer spriteRenderer;
     public float LastShoot = 0;
     public float DefaultAngle;
-    public GameObject shootingPoint = null;
-    private int interval;
     private float localScaleY;
+    private ParticleSystem muzzleFire;
     public bool IsReadyToShoot()
     {
-        if (Time.time - LastShoot > interval)
+        if (Time.time - LastShoot > 60f/FireRate )
         {
-            if (shootingPoint != null)
-            {
-                shootingPoint.SetActive(true);
-            }
+            muzzleFire.Play();
             LastShoot = Time.time;
             return true;
         }
@@ -56,22 +53,16 @@ public class Weapon : MonoBehaviour
     }
     void Awake()
     {
+        
+        muzzleFire = GetComponentInChildren<ParticleSystem>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        Model = spriteRenderer.sprite;
         localScaleY = Math.Abs(this.transform.localScale.y);
     }
     void Start()
     {
-        interval = 60 / FireRate;
     }
     void Update()
     {
-        if (Time.time - LastShoot > 1)
-        {
-            if (shootingPoint != null)
-            {
-                shootingPoint.SetActive(false);
-            }
-        }
-
     }
 }

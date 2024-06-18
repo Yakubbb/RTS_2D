@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 using UnityEngine;
 
@@ -11,6 +12,19 @@ public class Inventory : MonoBehaviour
     public float posOnHead = 1.1f;
     public float posOnBody = 1;
     public float weaponPos = 0;
+    public List<Explosive> grenades = new();
+    public void ThrowGrenade(Vector3 aim)
+    {
+        if(grenades.Count < 1){
+            return;
+        }
+        Explosive grenade = grenades.ElementAt(Random.Range(0,grenades.Count));
+        float x = aim.x + Random.Range(-1, 1);
+        float y = aim.y + Random.Range(-1, 1);
+        Instantiate(grenade,this.transform.position,Quaternion.identity).Activate(new Vector3(x,y,0));
+        grenades.Remove(grenade);
+
+    }
     public void Drop(GameObject item)
     {
         if (item == null)
@@ -23,12 +37,12 @@ public class Inventory : MonoBehaviour
             droping = helmet.gameObject;
             helmet = null;
         }
-        else if (armor!= null && item == armor.gameObject)
+        else if (armor != null && item == armor.gameObject)
         {
             droping = armor.gameObject;
             armor = null;
         }
-        else if (weapon!=null && item == weapon.gameObject)
+        else if (weapon != null && item == weapon.gameObject)
         {
             droping = weapon.gameObject;
             weapon = null;
@@ -46,6 +60,9 @@ public class Inventory : MonoBehaviour
         {
             return;
         }
+        if(obj.GetComponent<Explosive>() != null){
+            grenades.Add(obj.GetComponent<Explosive>());
+        }
         if (obj.GetComponent<Weapon>() != null)
         {
             if (weapon != null && dropOld) Drop(weapon.gameObject);
@@ -53,7 +70,7 @@ public class Inventory : MonoBehaviour
         }
         if (obj.GetComponent<Helmet>() != null)
         {
-            if (helmet!=null && dropOld) Drop(helmet.gameObject);
+            if (helmet != null && dropOld) Drop(helmet.gameObject);
             this.helmet = Instantiate(obj, new Vector3(this.transform.position.x, this.transform.position.y + obj.GetComponent<Armor>().PosOnUnit, this.transform.position.z), Quaternion.identity, this.transform).GetComponent<Helmet>();
         }
         if (obj.GetComponent<BodyArmor>() != null)

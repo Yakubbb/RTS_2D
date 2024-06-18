@@ -9,11 +9,12 @@ public class UnitBody : MonoBehaviour
         usec,
         bear,
         scav,
+        aboba
     }
     public bool IsDead;
     public int Accuracy = 100;
     public int Hp = 100;
-    public Team Side;
+    public Team UnitTeam;
     public int Speed;
     public Vector3 GoToPoint;
     public Inventory UnitInventory;
@@ -27,12 +28,17 @@ public class UnitBody : MonoBehaviour
     {
         return weapon != null;
     }
+    private bool HasGrenades()
+    {
+        return UnitInventory.grenades.Count > 0;
+    }
     private void Awake()
     {
         decals = FindFirstObjectByType<DecalsSpawner>();
         UnitInventory = GetComponent<Inventory>();
         colidersController = GetComponentInChildren<ColidersController>();
         range = colidersController.GetComponent<CircleCollider2D>();
+        colidersController.ColiderTeam = this.UnitTeam;
     }
     private void Start()
     {
@@ -50,8 +56,24 @@ public class UnitBody : MonoBehaviour
             Die();
         }
         HandleMovement();
+        ControllGrenades();
         ControlWeapon();
 
+    }
+    private void ControllGrenades()
+    {
+        if (HasGrenades())
+        {
+            if (IsEnemySpotted())
+            {
+                if (colidersController.enemy.IsDead) colidersController.enemy = null;
+                else
+                {
+                    Debug.Log(colidersController.enemy.transform.position,colidersController.enemy.gameObject);
+                    UnitInventory.ThrowGrenade(colidersController.enemy.transform.position);
+                }
+            }
+        }
     }
     private void ControlWeapon()
     {

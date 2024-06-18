@@ -5,9 +5,9 @@ using UnityEngine;
 public class ColidersController : MonoBehaviour
 {
     public UnitBody enemy;
-    private UnitBody.Team team;
+    public UnitBody.Team ColiderTeam;
     void Awake(){
-        this.team = GetComponentInParent<UnitBody>().Side;
+        this.ColiderTeam = GetComponentInParent<UnitBody>().UnitTeam;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,10 +17,11 @@ public class ColidersController : MonoBehaviour
         }
         if (collision.gameObject.layer != 6)
         {
+            //Debug.Log(collision.gameObject,this);
             return;
         }
         var enemy = collision.gameObject.GetComponent<UnitBody>();
-        if (enemy == null | enemy.Side == this.team | enemy.IsDead)
+        if (enemy == null | enemy.UnitTeam == this.ColiderTeam | enemy.IsDead)
         {
             if (enemy == this.enemy)
             {
@@ -41,5 +42,8 @@ public class ColidersController : MonoBehaviour
         {
             this.enemy = null;
         }
+    }
+    void Update(){
+        Debug.Log(this.ColiderTeam);
     }
 }

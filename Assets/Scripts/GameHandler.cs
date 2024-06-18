@@ -17,8 +17,8 @@ public class GameHandler : MonoBehaviour
     }
     public void AddUnit(UnitBody unit)
     {
-        this.UnitsInGame.Add((unit.Side, unit));
-        Debug.Log(unit + " | " + unit.Side, unit.gameObject);
+        this.UnitsInGame.Add((unit.UnitTeam, unit));
+        Debug.Log(unit + " | " + unit.UnitTeam, unit.gameObject);
     }
     void Update()
     {
