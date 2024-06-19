@@ -22,6 +22,9 @@ public class DecalsSpawner : MonoBehaviour
         pool.gameObject.layer = 8;
 
     }
+    public void SpawnMedGarbage(Vector3 pos){
+
+    }
     void Start()
     {
 

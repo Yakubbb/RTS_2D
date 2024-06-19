@@ -222,9 +222,10 @@ MonoBehaviour:
   Accuracy: 100
   Hp: 100
   UnitTeam: 0
-  Speed: 1
+  Speed: 3
   GoToPoint: {x: 0, y: 0, z: 0}
   UnitInventory: {fileID: 0}
+  Decals: {fileID: 0}
 --- !u!61 &126080085735119280
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -401,7 +402,7 @@ GameObject:
   - component: {fileID: 2386579959733030547}
   - component: {fileID: 1381206859638999456}
   - component: {fileID: 3273589486497996885}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FieldOfView
   m_TagString: Untagged
   m_Icon: {fileID: 0}

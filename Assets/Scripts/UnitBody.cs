@@ -26,7 +26,7 @@ public class UnitBody : MonoBehaviour
     private Helmet helmet;
     private BodyArmor bodyArmor;
     private Weapon weapon;
-    private DecalsSpawner decals;
+    public  DecalsSpawner Decals;
     private CircleCollider2D range;
     private bool IsArmed()
     {
@@ -38,7 +38,7 @@ public class UnitBody : MonoBehaviour
     }
     private void Awake()
     {
-        decals = FindFirstObjectByType<DecalsSpawner>();
+        Decals = FindFirstObjectByType<DecalsSpawner>();
         UnitInventory = GetComponent<Inventory>();
         range = ColidersController.GetComponent<CircleCollider2D>();
         ColidersController.ColiderTeam = this.UnitTeam;
@@ -62,6 +62,13 @@ public class UnitBody : MonoBehaviour
         ControllGrenades();
         ControlWeapon();
 
+    }
+    public void TakeHeal(int amount){
+        if(this.Hp + amount > 100){
+            this.Hp = 100;
+            return;
+        }
+        this.Hp +=amount;
     }
     private void ControllGrenades()
     {
@@ -161,9 +168,9 @@ public class UnitBody : MonoBehaviour
         {
             UnitInventory.Drop(weapon.gameObject);
         }
-        if (decals != null)
+        if (Decals != null)
         {
-            decals.SpawnPool(this.transform.position);
+            Decals.SpawnPool(this.transform.position);
         }
         IsDead = true;
     }
@@ -180,9 +187,9 @@ public class UnitBody : MonoBehaviour
         }
         if (damage > 20)
         {
-            if (decals != null)
+            if (Decals != null)
             {
-                decals.SpawnSplash(this.transform.position);
+                Decals.SpawnSplash(this.transform.position);
             }
         }
         Hp -= damage;

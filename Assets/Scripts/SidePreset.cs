@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class SidePreset : MonoBehaviour
 {
-    private GameObject getRandomUnit(GameObject[] mas)
+    
+    public UnitBody.Team team;
+    public GameObject[] LowTierArmor;
+    public GameObject[] MidTierArmor;
+    public GameObject[] HighTierArmor;
+
+    public GameObject[] LowTierPistol;
+    public GameObject[] MidTierPistol;
+    public GameObject[] HighTierPistol;
+
+    public GameObject[] LowTierRifle;
+    public GameObject[] MidTierRifle;
+    public GameObject[] HighTierRifle;
+
+    public GameObject[] LowTierAR;
+    public GameObject[] MidTierAR;
+    public GameObject[] HighTierAR;
+
+    public void Spawn(GameObject[] armor, GameObject[] weapon, GameObject[] helmet)
     {
-        if (mas.Length == 0)
-        {
-            return null;
-        }
-        return mas[Random.Range(0,mas.Length)];
+        
     }
-    public GameObject[] NoobUnitsWithPistol;
-    public GameObject[] NoobUnitsWithAR;
-    public GameObject[] NoobUnitsWithSniper;
-
-    public GameObject[] NormalUnitsWithPistol;
-    public GameObject[] NormalUnitsWithAR;
-    public GameObject[] NormalUnitsWithSniper;
-
-    public GameObject[] ProsbUnitsWithPistol;
-    public GameObject[] ProsbUnitsWithAR;
-    public GameObject[] ProsbUnitsWithSniper;
-
-
 }

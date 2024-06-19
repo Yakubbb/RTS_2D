@@ -20,30 +20,54 @@ public class CameraController : MonoBehaviour
         Vector3 newPosition = transform.position + new Vector3(horizontalInput, verticalInput, 0f) * moveSpeed * Time.deltaTime;
         transform.position = newPosition;
     }
-    private void HandleClick()
+    private void HandleLeftClick()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        Debug.Log(hit.point);
+        if (hit.collider != null && hit.transform.GetComponentInChildren<UnitBody>() != null && !hit.transform.GetComponentInChildren<UnitBody>().IsDead)
+        {
+            if (selectedUnit != null)
+            {
+                selectedUnit.IsSelected = false;
+            }
+            Debug.Log(hit.transform.GetComponent<UnitBody>());
+            selectedUnit = hit.transform.GetComponent<UnitBody>();
+            selectedUnit.IsSelected = true;
+            HasSelectedUnit = true;
+        }
+        else
+        {
+            if (hit.transform != null)
+            {
+                Debug.Log(hit.transform.gameObject.name);
+            }
+            if (selectedUnit != null)
+            {
+                selectedUnit.IsSelected = false;
+                HasSelectedUnit = false;
+            }
+        }
+
+    }
+    private void HandleRightClick()
+    {
+        if (selectedUnit == null || HasSelectedUnit == false)
+        {
+            return;
+        }
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        Debug.Log(Input.mousePosition);
+        selectedUnit.GoToPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+    private void HandleInput()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (hit.collider != null && hit.transform.GetComponentInChildren<UnitBody>() != null)
-            {
-                if (selectedUnit != null)
-                {
-                    selectedUnit.IsSelected = false;
-                }
-                Debug.Log(hit.transform.GetComponent<UnitBody>());
-                selectedUnit = hit.transform.GetComponent<UnitBody>();
-                selectedUnit.IsSelected = true;
-                HasSelectedUnit = true;
-            }
-            else
-            {
-                if (selectedUnit != null)
-                {
-                    selectedUnit.IsSelected = false;
-                    HasSelectedUnit = false;
-                }
-            }
+            HandleLeftClick();
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            HandleRightClick();
         }
     }
 
@@ -51,6 +75,14 @@ public class CameraController : MonoBehaviour
     {
         HandleMovement();
         HandleZoom();
-        HandleClick();
+        HandleInput();
+        if (selectedUnit != null)
+        {
+            if (selectedUnit.IsDead)
+            {
+                selectedUnit.IsSelected = false;
+                HasSelectedUnit = false;
+            }
+        }
     }
 }
