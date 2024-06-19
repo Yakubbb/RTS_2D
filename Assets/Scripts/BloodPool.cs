@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class BloodPool : MonoBehaviour
 {
-    public GameObject particles;
-    public SpriteRenderer renderer;
+    public GameObject Particles;
+    public SpriteRenderer Renderer;
     public Sprite[] Sprites;
     public float SpawnTime;
     public bool ItsProcessing = false;
     public void SpawnBloodPool()
     {
         ItsProcessing = true;
-        particles = Instantiate(particles,this.transform.position,Quaternion.identity);
+        Particles = Instantiate(Particles,this.transform.position,Quaternion.identity);
     }
     void HandlePool()
     {
@@ -30,14 +30,14 @@ public class BloodPool : MonoBehaviour
             this.transform.localScale = newScale;
             if(newScale.x >= 1 && newScale.y>=1){
                 ItsProcessing = false;
-                Destroy(particles);
+                Destroy(Particles);
             }
         }
     }
     void Awake()
     {
-        renderer = GetComponent<SpriteRenderer>();
-        renderer.sprite = Sprites[Random.Range(0, Sprites.Length)];
+        Renderer = GetComponent<SpriteRenderer>();
+        Renderer.sprite = Sprites[Random.Range(0, Sprites.Length)];
         this.transform.localScale = Vector3.zero;
     }
     void Update()

@@ -27,7 +27,7 @@ public class PlayerUiCOntroller : MonoBehaviour
         cnv = GetComponentInChildren<Canvas>();
         camera = GetComponentInParent<CameraController>();
     }
-    void HandleUnitInfoDIsplay()
+    public void HandleUnitInfoDIsplay()
 
     {
         if (UnitSelected)
