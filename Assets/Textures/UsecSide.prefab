@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8489540033978593982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4201539119478736575}
+  - component: {fileID: 3739500818333774817}
+  m_Layer: 0
+  m_Name: UsecSide
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4201539119478736575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8489540033978593982}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3739500818333774817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8489540033978593982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b6a8374d972e34c924e4ef2112d30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 5059605875017461023, guid: a66968e09f8dd244bb8eddeae15089ef, type: 3}
+  team: 0
+  LowTierArmor:
+  - {fileID: 895080179575177130, guid: 4565ee5a2b4039049a54a0d4341511d9, type: 3}
+  MidTierArmor:
+  - {fileID: 895080179575177130, guid: 43bb8d5dc8b451f48848813634d9f0c0, type: 3}
+  - {fileID: 895080179575177130, guid: 4565ee5a2b4039049a54a0d4341511d9, type: 3}
+  HighTierArmor:
+  - {fileID: 895080179575177130, guid: 43bb8d5dc8b451f48848813634d9f0c0, type: 3}
+  - {fileID: 895080179575177130, guid: cc0f185200a787047a9af2c0ea2cae7b, type: 3}
+  LowTierHelmet:
+  - {fileID: 3036685242482059330, guid: 777d06d03d1710047baaef520c8c691f, type: 3}
+  MidTierHelmet:
+  - {fileID: 3036685242482059330, guid: 7b66c20f24770564c8944b6b2cd22b62, type: 3}
+  - {fileID: 3036685242482059330, guid: 777d06d03d1710047baaef520c8c691f, type: 3}
+  HighTierHelmet:
+  - {fileID: 3036685242482059330, guid: 7b66c20f24770564c8944b6b2cd22b62, type: 3}
+  - {fileID: 3036685242482059330, guid: 778dc1d7abbdbe04e9423c4a912dd959, type: 3}
+  LowTierPistol:
+  - {fileID: 8928786488249424242, guid: b937e471106eef042bdef7e881bd2f6e, type: 3}
+  MidTierPistol:
+  - {fileID: 8928786488249424242, guid: b937e471106eef042bdef7e881bd2f6e, type: 3}
+  HighTierPistol:
+  - {fileID: 8928786488249424242, guid: b937e471106eef042bdef7e881bd2f6e, type: 3}
+  LowTierRifle:
+  - {fileID: 8928786488249424242, guid: 3eb56578b90a2484ea65c0c6e706bf14, type: 3}
+  MidTierRifle:
+  - {fileID: 8928786488249424242, guid: 3eb56578b90a2484ea65c0c6e706bf14, type: 3}
+  - {fileID: 8928786488249424242, guid: 2cca5a855fef63b46bbc1a02fd99611b, type: 3}
+  HighTierRifle:
+  - {fileID: 8928786488249424242, guid: 2cca5a855fef63b46bbc1a02fd99611b, type: 3}
+  LowTierAR:
+  - {fileID: 8928786488249424242, guid: aa0e49631dd188147946e297001376a6, type: 3}
+  - {fileID: 8928786488249424242, guid: cedbd067b3375fc4595255cf170a9fd4, type: 3}
+  MidTierAR:
+  - {fileID: 8928786488249424242, guid: aa0e49631dd188147946e297001376a6, type: 3}
+  - {fileID: 8928786488249424242, guid: 76026c6208cb37043a2e230ebee7a4af, type: 3}
+  HighTierAR:
+  - {fileID: 8928786488249424242, guid: 76026c6208cb37043a2e230ebee7a4af, type: 3}
