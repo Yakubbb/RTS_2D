@@ -12,20 +12,23 @@ public class UnitUi : MonoBehaviour
     public Slider armor;
     public TextMeshPro UnitName;
     public TextMeshPro UnitTeam;
+    public SpriteRenderer Selected;
     void Awake()
     {
         unit = GetComponentInParent<UnitBody>();
     }
 
-   
+
     void Update()
     {
-        if(unit.IsDead){
+        if (unit.IsDead)
+        {
             this.gameObject.SetActive(false);
         }
+        Selected.enabled = unit.IsSelected;
         UnitTeam.text = unit.UnitTeam.ToString();
         UnitName.text = unit.UnitName;
-        hp.value = unit.Hp/100;
-        armor.value = unit.GetArmorValue()/100;
+        hp.value = unit.Hp / 100;
+        armor.value = unit.GetArmorValue() / 100;
     }
 }

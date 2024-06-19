@@ -5,6 +5,8 @@ using UnityEngine.UIElements.Experimental;
 
 public class UnitBody : MonoBehaviour
 {
+    public ColidersController ColidersController;
+    public bool IsSelected;
     public string UnitName = "aboba";
     public enum Team
     {
@@ -25,7 +27,6 @@ public class UnitBody : MonoBehaviour
     private BodyArmor bodyArmor;
     private Weapon weapon;
     private DecalsSpawner decals;
-    private ColidersController colidersController;
     private CircleCollider2D range;
     private bool IsArmed()
     {
@@ -39,14 +40,13 @@ public class UnitBody : MonoBehaviour
     {
         decals = FindFirstObjectByType<DecalsSpawner>();
         UnitInventory = GetComponent<Inventory>();
-        colidersController = GetComponentInChildren<ColidersController>();
-        range = colidersController.GetComponent<CircleCollider2D>();
-        colidersController.ColiderTeam = this.UnitTeam;
+        range = ColidersController.GetComponent<CircleCollider2D>();
+        ColidersController.ColiderTeam = this.UnitTeam;
     }
     private void Start()
     {
         UpdateInventory();
-        GoToPoint = new Vector3(this.transform.position.x + 1, this.transform.position.y + 10, this.transform.position.z);
+        GoToPoint = this.transform.position;
     }
     private void Update()
     {
@@ -69,11 +69,11 @@ public class UnitBody : MonoBehaviour
         {
             if (IsEnemySpotted())
             {
-                if (colidersController.enemy.IsDead) colidersController.enemy = null;
+                if (ColidersController.enemy.IsDead) ColidersController.enemy = null;
                 else
                 {
-                    Debug.Log(colidersController.enemy.transform.position,colidersController.enemy.gameObject);
-                    UnitInventory.ThrowGrenade(colidersController.enemy.transform.position);
+                    Debug.Log(ColidersController.enemy.transform.position,ColidersController.enemy.gameObject);
+                    UnitInventory.ThrowGrenade(ColidersController.enemy.transform.position);
                 }
             }
         }
@@ -87,10 +87,10 @@ public class UnitBody : MonoBehaviour
         range.radius = this.weapon.Range;
         if (IsEnemySpotted())
         {
-            if (colidersController.enemy.IsDead) colidersController.enemy = null;
+            if (ColidersController.enemy.IsDead) ColidersController.enemy = null;
             else
             {
-                AimAt(colidersController.enemy.transform.position);
+                AimAt(ColidersController.enemy.transform.position);
                 Shoot();
             }
         }
@@ -135,7 +135,7 @@ public class UnitBody : MonoBehaviour
         Vector3 newPosition = transform.position + direction * Speed * Time.deltaTime;
         transform.position = newPosition;
     }
-    private bool IsEnemySpotted() => this.colidersController.enemy != null;
+    private bool IsEnemySpotted() => this.ColidersController.enemy != null;
     private void Shoot()
     {
         if (weapon.IsReadyToShoot())
@@ -143,7 +143,7 @@ public class UnitBody : MonoBehaviour
             bool IsHit = Random.Range(Accuracy, 100) > 70;
             if (IsHit)
             {
-                colidersController.enemy.TakeDamage(weapon.Damage);
+                ColidersController.enemy.TakeDamage(weapon.Damage);
             }
         }
     }

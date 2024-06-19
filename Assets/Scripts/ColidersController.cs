@@ -5,9 +5,10 @@ using UnityEngine;
 public class ColidersController : MonoBehaviour
 {
     public UnitBody enemy;
+    public UnitBody unit;
     public UnitBody.Team ColiderTeam;
     void Awake(){
-        this.ColiderTeam = GetComponentInParent<UnitBody>().UnitTeam;
+        this.ColiderTeam = unit.UnitTeam;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -44,6 +45,6 @@ public class ColidersController : MonoBehaviour
         }
     }
     void Update(){
-        Debug.Log(this.ColiderTeam);
+        //Debug.Log(this.ColiderTeam);
     }
 }

@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\u0421\u0412\u0414 7.62 54R"
   Damage: 100
-  FireRate: 15
+  FireRate: 10
   Range: 20
   AmmoType: 2
   spriteRenderer: {fileID: 0}

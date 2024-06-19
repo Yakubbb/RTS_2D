@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8827391555643430513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4715466487504302459}
+  - component: {fileID: 7616179466346891872}
+  m_Layer: 0
+  m_Name: UsecArmy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4715466487504302459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8827391555643430513}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7616179466346891872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8827391555643430513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b6a8374d972e34c924e4ef2112d30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoobUnitsWithPistol: []
+  NoobUnitsWithAR:
+  - {fileID: 3134283354783104194, guid: eae87291d317bb84999109f82b29da4e, type: 3}
+  - {fileID: 3134283354783104194, guid: bbf9c71f7d1da464595e5d4490271a4f, type: 3}
+  - {fileID: 3134283354783104194, guid: 81bc71f928570f844b114a34fef006c0, type: 3}
+  NoobUnitsWithSniper: []
+  NormalUnitsWithPistol: []
+  NormalUnitsWithAR:
+  - {fileID: 3134283354783104194, guid: 41f4b5036cc25e247afbf03b23aef154, type: 3}
+  - {fileID: 3134283354783104194, guid: af470a12f3d234649aa0aa360ab0e602, type: 3}
+  - {fileID: 3134283354783104194, guid: 9f03560277496434e9268288b8e7ebe1, type: 3}
+  NormalUnitsWithSniper: []
+  ProsbUnitsWithPistol: []
+  ProsbUnitsWithAR: []
+  ProsbUnitsWithSniper: []

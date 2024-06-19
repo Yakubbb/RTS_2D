@@ -22,7 +22,7 @@ public class UnitSpawner : MonoBehaviour
             //Debug.Log(Time.time - LastSpawn);
             float x = Random.Range(this.transform.position.x - 10, this.transform.position.x + 10);
             float y = Random.Range(this.transform.position.y - 10, this.transform.position.y + 10);
-            UnitBody newUnit = Instantiate(unit, new Vector3(x, y, 0), Quaternion.identity,this.transform).GetComponent<UnitBody>();
+            UnitBody newUnit = Instantiate(unit, new Vector3(x, y, 0), Quaternion.identity,this.transform).GetComponentInChildren<UnitBody>();
             newUnit.UnitInventory.Equip(armors[Random.Range(0, armors.Length)].gameObject);
             newUnit.UnitInventory.Equip(helmets[Random.Range(0, helmets.Length)].gameObject);
             newUnit.UnitInventory.Equip(weapons[Random.Range(0, weapons.Length)].gameObject);

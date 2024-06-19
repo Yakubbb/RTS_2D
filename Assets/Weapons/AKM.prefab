@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u0410\u041A\u041C 7.62 39"
-  Damage: 9
+  Damage: 12
   FireRate: 130
   Range: 10
   AmmoType: 2
