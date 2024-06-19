@@ -44,18 +44,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b6a8374d972e34c924e4ef2112d30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoobUnitsWithPistol: []
-  NoobUnitsWithAR:
-  - {fileID: 3134283354783104194, guid: eae87291d317bb84999109f82b29da4e, type: 3}
-  - {fileID: 3134283354783104194, guid: bbf9c71f7d1da464595e5d4490271a4f, type: 3}
-  - {fileID: 3134283354783104194, guid: 81bc71f928570f844b114a34fef006c0, type: 3}
-  NoobUnitsWithSniper: []
-  NormalUnitsWithPistol: []
-  NormalUnitsWithAR:
-  - {fileID: 3134283354783104194, guid: 41f4b5036cc25e247afbf03b23aef154, type: 3}
-  - {fileID: 3134283354783104194, guid: af470a12f3d234649aa0aa360ab0e602, type: 3}
-  - {fileID: 3134283354783104194, guid: 9f03560277496434e9268288b8e7ebe1, type: 3}
-  NormalUnitsWithSniper: []
-  ProsbUnitsWithPistol: []
-  ProsbUnitsWithAR: []
-  ProsbUnitsWithSniper: []
+  unit: {fileID: 5059605875017461023, guid: a66968e09f8dd244bb8eddeae15089ef, type: 3}
+  team: 0
+  LowTierArmor:
+  - {fileID: 895080179575177130, guid: 4565ee5a2b4039049a54a0d4341511d9, type: 3}
+  MidTierArmor:
+  - {fileID: 895080179575177130, guid: 43bb8d5dc8b451f48848813634d9f0c0, type: 3}
+  HighTierArmor:
+  - {fileID: 895080179575177130, guid: cc0f185200a787047a9af2c0ea2cae7b, type: 3}
+  - {fileID: 895080179575177130, guid: 43bb8d5dc8b451f48848813634d9f0c0, type: 3}
+  LowTierHelmet:
+  - {fileID: 3036685242482059330, guid: 777d06d03d1710047baaef520c8c691f, type: 3}
+  MidTierHelmet:
+  - {fileID: 3036685242482059330, guid: 7b66c20f24770564c8944b6b2cd22b62, type: 3}
+  - {fileID: 3036685242482059330, guid: 777d06d03d1710047baaef520c8c691f, type: 3}
+  HighTierHelmet:
+  - {fileID: 3036685242482059330, guid: 778dc1d7abbdbe04e9423c4a912dd959, type: 3}
+  - {fileID: 3036685242482059330, guid: 7b66c20f24770564c8944b6b2cd22b62, type: 3}
+  LowTierPistol:
+  - {fileID: 8928786488249424242, guid: b937e471106eef042bdef7e881bd2f6e, type: 3}
+  MidTierPistol:
+  - {fileID: 8928786488249424242, guid: b937e471106eef042bdef7e881bd2f6e, type: 3}
+  HighTierPistol:
+  - {fileID: 8928786488249424242, guid: b937e471106eef042bdef7e881bd2f6e, type: 3}
+  - {fileID: 8928786488249424242, guid: 812525ea6c4e69c4ead7d08d8a3bed05, type: 3}
+  LowTierRifle:
+  - {fileID: 8928786488249424242, guid: 3eb56578b90a2484ea65c0c6e706bf14, type: 3}
+  MidTierRifle:
+  - {fileID: 8928786488249424242, guid: 3eb56578b90a2484ea65c0c6e706bf14, type: 3}
+  - {fileID: 8928786488249424242, guid: 2cca5a855fef63b46bbc1a02fd99611b, type: 3}
+  HighTierRifle:
+  - {fileID: 8928786488249424242, guid: 2cca5a855fef63b46bbc1a02fd99611b, type: 3}
+  LowTierAR:
+  - {fileID: 8928786488249424242, guid: aa0e49631dd188147946e297001376a6, type: 3}
+  MidTierAR:
+  - {fileID: 8928786488249424242, guid: aa0e49631dd188147946e297001376a6, type: 3}
+  - {fileID: 8928786488249424242, guid: 76026c6208cb37043a2e230ebee7a4af, type: 3}
+  HighTierAR:
+  - {fileID: 8928786488249424242, guid: 76026c6208cb37043a2e230ebee7a4af, type: 3}

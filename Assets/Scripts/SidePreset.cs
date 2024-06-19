@@ -29,9 +29,9 @@ public class SidePreset : MonoBehaviour
     {
         return items[Random.Range(0, items.Length)];
     }
-    private UnitBody Spawn(Vector3 position, GameObject[] armor = null, GameObject[] weapon = null, GameObject[] helmet = null)
+    private UnitBody Spawn(string name, int skill, Vector3 position, GameObject[] armor = null, GameObject[] weapon = null, GameObject[] helmet = null)
     {
-        UnitBody newUnit = Instantiate(unit, position, Quaternion.identity, this.transform).GetComponentInChildren<UnitBody>();
+        UnitBody newUnit = Instantiate(unit, position, Quaternion.identity).GetComponentInChildren<UnitBody>();
         if (armor != null && armor.Length > 0)
         {
             newUnit.UnitInventory.Equip(GetRandomItem(armor).gameObject);
@@ -45,18 +45,20 @@ public class SidePreset : MonoBehaviour
             newUnit.UnitInventory.Equip(GetRandomItem(helmet).gameObject);
         }
         newUnit.UnitTeam = this.team;
+        newUnit.UnitName = name;
+        newUnit.Accuracy = skill;
         return newUnit;
 
     }
-    public UnitBody SpawnLowPistol(Vector3 pos) => Spawn(pos,LowTierArmor, LowTierPistol, LowTierHelmet);
-    public UnitBody SpawnLowAR(Vector3 pos) => Spawn(pos, LowTierArmor, LowTierAR, LowTierHelmet);
-    public UnitBody SpawnLowSniper(Vector3 pos) => Spawn(pos, LowTierArmor, LowTierRifle, LowTierHelmet);
+    public UnitBody SpawnLowPistol(Vector3 pos, int skill, string name) => Spawn(name,skill,pos, LowTierArmor, LowTierPistol, LowTierHelmet);
+    public UnitBody SpawnLowAR(Vector3 pos, int skill, string name) => Spawn(name,skill,pos, LowTierArmor, LowTierAR, LowTierHelmet);
+    public UnitBody SpawnLowSniper(Vector3 pos, int skill, string name) => Spawn(name,skill,pos, LowTierArmor, LowTierRifle, LowTierHelmet);
 
-    public UnitBody SpawnMidPistol(Vector3 pos) => Spawn(pos, MidTierArmor, MidTierPistol, MidTierHelmet);
-    public UnitBody SpawnMidAR(Vector3 pos) => Spawn(pos, MidTierArmor, MidTierAR, MidTierHelmet);
-    public UnitBody SpawnMidSniper(Vector3 pos) => Spawn(pos, MidTierArmor, MidTierRifle, MidTierHelmet);
+    public UnitBody SpawnMidPistol(Vector3 pos, int skill, string name) => Spawn(name,skill,pos, MidTierArmor, MidTierPistol, MidTierHelmet);
+    public UnitBody SpawnMidAR(Vector3 pos, int skill, string name) => Spawn(name,skill,pos, MidTierArmor, MidTierAR, MidTierHelmet);
+    public UnitBody SpawnMidSniper(Vector3 pos, int skill, string name) => Spawn(name,skill,pos, MidTierArmor, MidTierRifle, MidTierHelmet);
 
-    public UnitBody SpawnHighPistol(Vector3 pos) => Spawn(pos, HighTierArmor, HighTierPistol, HighTierHelmet);
-    public UnitBody SpawnHighAR(Vector3 pos) => Spawn(pos, HighTierArmor, HighTierAR, HighTierHelmet);
-    public UnitBody SpawnHighSniper(Vector3 pos) => Spawn(pos, HighTierArmor, HighTierRifle, HighTierHelmet);
+    public UnitBody SpawnHighPistol(Vector3 pos, int skill, string name) => Spawn(name,skill,pos, HighTierArmor, HighTierPistol, HighTierHelmet);
+    public UnitBody SpawnHighAR(Vector3 pos, int skill, string name) => Spawn(name,skill,pos, HighTierArmor, HighTierAR, HighTierHelmet);
+    public UnitBody SpawnHighSniper(Vector3 pos, int skill, string name) => Spawn(name,skill,pos, HighTierArmor, HighTierRifle, HighTierHelmet);
 }

@@ -7,12 +7,12 @@ using UnityEngine.UI;
 
 public class PlayerUiCOntroller : MonoBehaviour
 {
+    public TMPro.TMP_Dropdown Ars;
+    public TMPro.TMP_Dropdown Pistols;
+    public TMPro.TMP_Dropdown Rifles;
     public PlayerController player;
     public Text PlayerLvl;
     public Text PlayerMoney;
-
-
-
     public GameObject UnitInfoPanel;
     public Text Name;
     public Text Weapon;
@@ -70,8 +70,10 @@ public class PlayerUiCOntroller : MonoBehaviour
             UnitInfoPanel.SetActive(false);
         }
     }
-    public void HandlePlayerInfo(){
-        if(player != null){
+    public void HandlePlayerInfo()
+    {
+        if (player != null)
+        {
             PlayerLvl.text = player.Lvl.ToString();
             PlayerMoney.text = player.Money.ToString();
         }
@@ -81,5 +83,52 @@ public class PlayerUiCOntroller : MonoBehaviour
         UnitSelected = camera.HasSelectedUnit;
         HandlePlayerInfo();
         HandleUnitInfoDIsplay();
+    }
+    public void SpawnAr()
+    {
+        switch (Ars.value)
+        {
+            case 0:
+                player.selectedSide.SpawnLowAR(player.SpawnPoint,Random.Range(10,30),NamesProvider.GetRandomName());
+                break;
+            case 1:
+                player.selectedSide.SpawnMidAR(player.SpawnPoint,Random.Range(36,65),NamesProvider.GetRandomName());
+                break;
+            case 2:
+                player.selectedSide.SpawnHighAR(player.SpawnPoint,Random.Range(64,110),NamesProvider.GetRandomName());
+                break;
+        }
+    }
+    public void SpawnPistol()
+    {
+        switch (Pistols.value)
+        {
+            case 0:
+                player.selectedSide.SpawnLowPistol(player.SpawnPoint,Random.Range(10,30),NamesProvider.GetRandomName());
+                break;
+            case 1:
+                player.selectedSide.SpawnMidPistol(player.SpawnPoint,Random.Range(36,65),NamesProvider.GetRandomName());
+                break;
+            case 2:
+                player.selectedSide.SpawnHighPistol(player.SpawnPoint,Random.Range(64,110),NamesProvider.GetRandomName());
+                break;
+        }
+
+    }
+    public void SpawnRifle()
+    {
+        switch (Rifles.value)
+        {
+            case 0:
+                player.selectedSide.SpawnLowSniper(player.SpawnPoint,Random.Range(10,30),NamesProvider.GetRandomName());
+                break;
+            case 1:
+                player.selectedSide.SpawnMidSniper(player.SpawnPoint,Random.Range(36,65),NamesProvider.GetRandomName());
+                break;
+            case 2:
+                player.selectedSide.SpawnHighSniper(player.SpawnPoint,Random.Range(64,110),NamesProvider.GetRandomName());
+                break;
+        }
+
     }
 }
