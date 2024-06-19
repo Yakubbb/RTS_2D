@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb5d1321dae0dd2498b71f83f141b3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 6579359057517787529, guid: 5b212b7dd7729eb45ae3d8589a1eb285, type: 3}
-  splash: {fileID: 9040571665016863085, guid: ac09b60d7f49fe7419f8e2ccc000c52a, type: 3}
+  Pool: {fileID: 6579359057517787529, guid: 5b212b7dd7729eb45ae3d8589a1eb285, type: 3}
+  Splash: {fileID: 9040571665016863085, guid: ac09b60d7f49fe7419f8e2ccc000c52a, type: 3}
