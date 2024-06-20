@@ -13,6 +13,7 @@ public class PlayerUiCOntroller : MonoBehaviour
     public PlayerController player;
     public Text PlayerLvl;
     public Text PlayerMoney;
+    public Text UnitCount;
     public GameObject UnitInfoPanel;
     public Text Name;
     public Text Weapon;
@@ -21,11 +22,19 @@ public class PlayerUiCOntroller : MonoBehaviour
     private CameraController camera;
     private bool UnitSelected;
     private Canvas cnv;
+
+    private Color armorDefColor;
+    private Color helmetDefColor;
+    private Color weaponDefColor;
     void Awake()
     {
         player = GetComponentInParent<PlayerController>();
         cnv = GetComponentInChildren<Canvas>();
         camera = GetComponentInParent<CameraController>();
+
+        armorDefColor =  Armor.color;
+        helmetDefColor = Helmet.color;
+        weaponDefColor = Weapon.color;
     }
     public void HandleUnitInfoDIsplay()
 
@@ -36,33 +45,27 @@ public class PlayerUiCOntroller : MonoBehaviour
             Name.text = camera.selectedUnit.UnitName;
             if (camera.selectedUnit.UnitInventory.weapon != null)
             {
-                Weapon.color = Color.green;
                 Weapon.text = "~" + camera.selectedUnit.UnitInventory.weapon.Name;
             }
             else
             {
-                Weapon.color = Color.red;
-                Weapon.text = "~" + "No weapon";
+                Weapon.text = "~ " + "No weapon";
             }
             if (camera.selectedUnit.UnitInventory.weapon != null)
             {
-                Armor.color = Color.green;
-                Armor.text = "~" + camera.selectedUnit.UnitInventory.armor.Name;
+                Armor.text = "~ " + camera.selectedUnit.UnitInventory.armor.Name;
             }
             else
             {
-                Armor.color = Color.red;
-                Armor.text = "~" + "No armor";
+                Armor.text = "~ " + "No armor";
             }
             if (camera.selectedUnit.UnitInventory.helmet != null)
             {
-                Helmet.color = Color.green;
-                Helmet.text = "~" + camera.selectedUnit.UnitInventory.helmet.Name;
+                Helmet.text = "~ " + camera.selectedUnit.UnitInventory.helmet.Name;
             }
             else
             {
-                Helmet.color = Color.red;
-                Helmet.text = "~" + "No helmet";
+                Helmet.text = "~ " + "No helmet";
             }
         }
         else
@@ -74,6 +77,7 @@ public class PlayerUiCOntroller : MonoBehaviour
     {
         if (player != null)
         {
+            UnitCount.text = player.UnitsKolvo.ToString();
             PlayerLvl.text = player.Lvl.ToString();
             PlayerMoney.text = player.Money.ToString();
         }

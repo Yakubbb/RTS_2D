@@ -16,6 +16,7 @@ public static class NamesProvider
         "Почти",
         "Уже",
         "Ржавый",
+        "Бессметрный",
         "Косой",
         "Меткий",
         "Грубый",
@@ -39,6 +40,7 @@ public static class NamesProvider
         "Железный"};
     private static string[] namesSecond = {
         "Прибой",
+        "Шпала",
         "Отец Сергий",
         "Оптимист",
         "Ночной Вампир",
@@ -88,7 +90,12 @@ public static class NamesProvider
         "Шляпник",
         "Шериф",
         "Шахматист",
-        "Шатун"
+        "Шатун",
+        "Док",
+        "Ботаник",
+        "Ястреб",
+        "Смерть",
+        "Волк",
     };
 
     public static string GetRandomName() => namesFirst[Random.Range(0, namesFirst.Length)] + " " + namesSecond[Random.Range(0, namesSecond.Length)];

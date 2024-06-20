@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42e134d682de5e40a3dc5e66bc6e6e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: "\u0421\u0412\u0414 7.62 54R"
+  Name: BARRETT
   Damage: 100
   FireRate: 10
   Range: 20

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42e134d682de5e40a3dc5e66bc6e6e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: m4a1
+  Name: M4A1
   Damage: 10
   FireRate: 180
   Range: 10

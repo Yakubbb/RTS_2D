@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        UnitsKolvo = FindObjectsByType<UnitBody>(FindObjectsSortMode.None).Count(u=>u.UnitTeam == selectedSide.team);
         
     }
 }

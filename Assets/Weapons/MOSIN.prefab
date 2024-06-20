@@ -100,12 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42e134d682de5e40a3dc5e66bc6e6e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: "\u0421\u0412\u0414 7.62 54R"
+  Name: MOSIN
   Damage: 23
   FireRate: 20
   Range: 10
   AmmoType: 2
-  Model: {fileID: -5389326232998336429, guid: 410df32d9a1a0e94abfd1413cce07a8c, type: 3}
   spriteRenderer: {fileID: 0}
   LastShoot: 0
   DefaultAngle: 40

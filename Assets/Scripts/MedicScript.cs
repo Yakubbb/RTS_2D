@@ -33,6 +33,10 @@ public class MedicScript : MonoBehaviour
             IsHealing = false;
             return;
         }
+        if(HealTarget.Hp == 100){
+            IsHealing = false;
+            return;
+        }
         if (Time.time - LastTimeHeal > Delay)
         {
             IsHealing = true;
@@ -51,10 +55,12 @@ public class MedicScript : MonoBehaviour
         {
             if (IsHealing)
             {
+                Debug.Log("Хилим");
                 AidKit.enabled = true;
             }
             else
             {
+                 Debug.Log("Не хилим");
                 AidKit.enabled = false;
             }
         }

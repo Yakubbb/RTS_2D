@@ -55,6 +55,7 @@ public class Weapon : MonoBehaviour
     {
         
         muzzleFire = GetComponentInChildren<ParticleSystem>();
+        muzzleFire.Stop();
         spriteRenderer = GetComponent<SpriteRenderer>();
         Model = spriteRenderer.sprite;
         localScaleY = Math.Abs(this.transform.localScale.y);

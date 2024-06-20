@@ -156,6 +156,7 @@ public class UnitBody : MonoBehaviour
     }
     public void Die()
     {
+        this.GetComponent<Rigidbody2D>().freezeRotation = false;
         if (Random.Range(0, 10) > 5)
         {
             this.transform.rotation = Quaternion.Euler(0, 0, 90);
