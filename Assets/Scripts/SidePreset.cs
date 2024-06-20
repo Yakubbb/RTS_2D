@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SidePreset : MonoBehaviour
 {
+    public Sprite Logo;
     public GameObject unit;
     public UnitBody.Team team;
     public GameObject[] LowTierArmor;

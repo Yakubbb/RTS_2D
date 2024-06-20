@@ -45,27 +45,27 @@ public class PlayerUiCOntroller : MonoBehaviour
             Name.text = camera.selectedUnit.UnitName;
             if (camera.selectedUnit.UnitInventory.weapon != null)
             {
-                Weapon.text = "~" + camera.selectedUnit.UnitInventory.weapon.Name;
+                Weapon.text = camera.selectedUnit.UnitInventory.weapon.Name;
             }
             else
             {
-                Weapon.text = "~ " + "No weapon";
+                Weapon.text =  "Безоружный";
             }
-            if (camera.selectedUnit.UnitInventory.weapon != null)
+            if (camera.selectedUnit.UnitInventory.armor != null)
             {
-                Armor.text = "~ " + camera.selectedUnit.UnitInventory.armor.Name;
+                Armor.text = camera.selectedUnit.UnitInventory.armor.Name;
             }
             else
             {
-                Armor.text = "~ " + "No armor";
+                Armor.text = "Брони нет";
             }
             if (camera.selectedUnit.UnitInventory.helmet != null)
             {
-                Helmet.text = "~ " + camera.selectedUnit.UnitInventory.helmet.Name;
+                Helmet.text = camera.selectedUnit.UnitInventory.helmet.Name;
             }
             else
             {
-                Helmet.text = "~ " + "No helmet";
+                Helmet.text = "Шлема нет";
             }
         }
         else

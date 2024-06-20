@@ -58,6 +58,7 @@ public class UnitBody : MonoBehaviour
         {
             Die();
         }
+        UpdateInventory();
         HandleMovement();
         ControllGrenades();
         ControlWeapon();

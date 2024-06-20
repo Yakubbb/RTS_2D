@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6460029857322143739}
   - component: {fileID: 1554432771581708753}
   - component: {fileID: 3078483202074468296}
+  - component: {fileID: 8503819106771486889}
   m_Layer: 0
   m_Name: BARRETT
   m_TagString: Untagged
@@ -108,6 +109,52 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   LastShoot: 0
   DefaultAngle: 40
+--- !u!61 &8503819106771486889
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928786488249424242}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.54, y: 0.82}
+    newSize: {x: 2.08, y: 0.69}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 3.54, y: 0.82}
+  m_EdgeRadius: 0
 --- !u!1001 &6083793588449412359
 PrefabInstance:
   m_ObjectHideFlags: 0

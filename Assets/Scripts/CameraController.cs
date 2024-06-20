@@ -23,14 +23,12 @@ public class CameraController : MonoBehaviour
     private void HandleLeftClick()
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-        Debug.Log(hit.point);
         if (hit.collider != null && hit.transform.GetComponentInChildren<UnitBody>() != null && !hit.transform.GetComponentInChildren<UnitBody>().IsDead)
         {
             if (selectedUnit != null)
             {
                 selectedUnit.IsSelected = false;
             }
-            Debug.Log(hit.transform.GetComponent<UnitBody>());
             selectedUnit = hit.transform.GetComponent<UnitBody>();
             selectedUnit.IsSelected = true;
             HasSelectedUnit = true;
@@ -39,7 +37,6 @@ public class CameraController : MonoBehaviour
         {
             if (hit.transform != null)
             {
-                Debug.Log(hit.transform.gameObject.name);
             }
             if (selectedUnit != null)
             {
@@ -56,7 +53,19 @@ public class CameraController : MonoBehaviour
             return;
         }
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-        Debug.Log(Input.mousePosition);
+        if (hit)
+        {
+            if (hit.transform.gameObject.GetComponent<Weapon>())
+            {
+                Debug.Log(hit.transform.gameObject.GetComponent<Weapon>());
+                if (Vector2.Distance( hit.transform.position, selectedUnit.transform.position ) < 3)
+                {
+                    selectedUnit.UnitInventory.Equip(hit.transform.gameObject, deleteTaken: true);
+                    return;
+                }
+                selectedUnit.GoToPoint = hit.transform.position;
+            }
+        }
         selectedUnit.GoToPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
     private void HandleInput()

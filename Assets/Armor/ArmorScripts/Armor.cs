@@ -20,7 +20,7 @@ public abstract class Armor : MonoBehaviour
     }
     public void LookLeft()
     {
-        if (Left = null)
+        if (Left == null)
         {
             SpriteRenderer.sprite = Right;
             SpriteRenderer.flipX = true;
@@ -40,7 +40,7 @@ public abstract class Armor : MonoBehaviour
         SpriteRenderer.flipX = false;
         SpriteRenderer.sprite = Back;
     }
-        void Start()
+    void Awake()
     {
         SpriteRenderer = GetComponent<SpriteRenderer>();
     }

@@ -54,7 +54,7 @@ public class Inventory : MonoBehaviour
         Instantiate(droping, new Vector3(this.transform.position.x + Random.Range(-1.5f, 1.5f), this.transform.position.y + +Random.Range(-1.5f, 1.5f), this.transform.position.z + Random.Range(-2, 2)), Quaternion.identity);
         Destroy(droping);
     }
-    public void Equip(GameObject obj, bool dropOld = true)
+    public void Equip(GameObject obj, bool dropOld = true, bool deleteTaken = false)
     {
         if (obj == null)
         {
@@ -77,6 +77,9 @@ public class Inventory : MonoBehaviour
         {
             if (armor != null && dropOld) Drop(armor.gameObject);
             this.armor = Instantiate(obj, new Vector3(this.transform.position.x, this.transform.position.y + obj.GetComponent<Armor>().PosOnUnit, this.transform.position.z), Quaternion.identity, this.transform).GetComponent<BodyArmor>();
+        }
+        if(deleteTaken){
+            Destroy(obj);
         }
     }
     void EquipStartLoadut()
