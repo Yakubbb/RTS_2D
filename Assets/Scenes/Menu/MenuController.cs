@@ -17,6 +17,7 @@ public class MenuController : MonoBehaviour
     public Slider slider;
     public void HandleBlood(bool value){
         BloodObject.SetActive(value);
+        Settings.HasBlood = value;
     }
     public void Exit()
     {

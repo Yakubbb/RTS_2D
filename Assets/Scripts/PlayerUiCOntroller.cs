@@ -48,8 +48,8 @@ public class PlayerUiCOntroller : MonoBehaviour
             Destroy(currentBuilding.gameObject);
             currentBuilding = null;
         }
-        player.TakeMoney(buildings.value * 300 + 300);
-        currentBuilding = Instantiate(buildingsObjects[buildings.value], player.BuildingSpawnPoint, Quaternion.identity).GetComponent<Building>();
+        if (player.TakeMoney(buildings.value * 300 + 300))
+            currentBuilding = Instantiate(buildingsObjects[buildings.value], player.BuildingSpawnPoint, Quaternion.identity).GetComponent<Building>();
     }
     void Awake()
     {
@@ -119,16 +119,16 @@ public class PlayerUiCOntroller : MonoBehaviour
         switch (Ars.value)
         {
             case 0:
-            if (player.TakeMoney(125))
-                player.selectedSide.SpawnLowAR(player.SpawnPoint, Random.Range(10, 30), NamesProvider.GetRandomName());
+                if (player.TakeMoney(125))
+                    player.selectedSide.SpawnLowAR(player.SpawnPoint, Random.Range(10, 30), NamesProvider.GetRandomName());
                 break;
             case 1:
-            if (player.TakeMoney(200))
-                player.selectedSide.SpawnMidAR(player.SpawnPoint, Random.Range(36, 65), NamesProvider.GetRandomName());
+                if (player.TakeMoney(200))
+                    player.selectedSide.SpawnMidAR(player.SpawnPoint, Random.Range(36, 65), NamesProvider.GetRandomName());
                 break;
             case 2:
-            if (player.TakeMoney(250))
-                player.selectedSide.SpawnHighAR(player.SpawnPoint, Random.Range(64, 110), NamesProvider.GetRandomName());
+                if (player.TakeMoney(250))
+                    player.selectedSide.SpawnHighAR(player.SpawnPoint, Random.Range(64, 110), NamesProvider.GetRandomName());
                 break;
         }
     }
