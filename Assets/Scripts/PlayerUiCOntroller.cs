@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class PlayerUiCOntroller : MonoBehaviour
 {
+    public Canvas specialUnitCanvas;
     public GameObject[] buildingsObjects;
     public TMPro.TMP_Dropdown buildings;
     public TMPro.TMP_Dropdown Ars;
@@ -29,6 +30,14 @@ public class PlayerUiCOntroller : MonoBehaviour
     private Color helmetDefColor;
     private Color weaponDefColor;
     private Building currentBuilding;
+    private void HandleSpecialUnitInfo(){
+        if(currentBuilding == null || currentBuilding.UnitsLast < 1){
+            specialUnitCanvas.enabled = false;
+        }
+        else{
+            specialUnitCanvas.enabled = true;
+        }
+    }
     public void SpawnBuilding(){
         if(currentBuilding != null){
             Destroy(currentBuilding.gameObject);
@@ -97,6 +106,7 @@ public class PlayerUiCOntroller : MonoBehaviour
         UnitSelected = camera.HasSelectedUnit;
         HandlePlayerInfo();
         HandleUnitInfoDIsplay();
+        HandleSpecialUnitInfo();
     }
     public void SpawnAr()
     {
@@ -144,5 +154,13 @@ public class PlayerUiCOntroller : MonoBehaviour
                 break;
         }
 
+    }
+    public void SpawnUnitFromBuilding(){
+        if(currentBuilding == null || currentBuilding.UnitsLast < 1){
+            return;
+        }
+        UnitBody newUnit = Instantiate(currentBuilding.GetSpecialUnit(), player.SpawnPoint, Quaternion.identity).GetComponentInChildren<UnitBody>();
+        newUnit.UnitTeam = player.selectedSide.team;
+        newUnit.UnitName = NamesProvider.GetRandomName();
     }
 }

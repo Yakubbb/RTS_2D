@@ -148,7 +148,7 @@ public class ArmorRotator : MonoBehaviour
         helmet = unitBody.UnitInventory.helmet;
         weapon = unitBody.UnitInventory.weapon;
         Vector3 direction = (unitBody.transform.position - unitBody.LookingTarget).normalized;
-        Debug.Log(direction);
+        //Debug.Log(direction);
         HandleWidth(direction);
         HandleHeight(direction);
     }

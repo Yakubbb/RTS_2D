@@ -8,7 +8,7 @@ public class Building : MonoBehaviour
     public TextMeshPro text;
     public GameObject SpecialUnit;
     public int UnitsLast;
-    GameObject GetSpecialUnit()
+    public GameObject GetSpecialUnit()
     {
         if (UnitsLast > 0)
         {
