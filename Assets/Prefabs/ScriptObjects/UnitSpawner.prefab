@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Delay: 5
   LastSpawn: 0
-  team: 0
+  team: 1
   unit: {fileID: 5059605875017461023, guid: a66968e09f8dd244bb8eddeae15089ef, type: 3}
   armors:
   - {fileID: 5921783612157764889, guid: 4565ee5a2b4039049a54a0d4341511d9, type: 3}

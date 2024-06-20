@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class UnitCommander : MonoBehaviour
 {
-    public List<UnitBody> AvalibleUnits;
-    public int UnitsSpawned;
-    public List<UnitBody> Units;
-    public Vector3 SpawnPoint;
-    public void SpawnUnit(UnitBody unit){
-        Instantiate(unit,SpawnPoint,Quaternion.identity);
-    }
-    void Start()
+    public bool IsAlive;
+    private UnitBody body;
+    void Awake()
     {
-        
+        body = GetComponentInChildren<UnitBody>();
     }
 
     void Update()
     {
-        
+        IsAlive = !body.IsDead;
     }
 }

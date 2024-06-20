@@ -23,11 +23,15 @@ public class Weapon : MonoBehaviour
     public float DefaultAngle;
     private float localScaleY;
     private ParticleSystem muzzleFire;
+    private AudioSource sound;
     public bool IsReadyToShoot()
     {
         if (Time.time - LastShoot > 60f / FireRate)
         {
             muzzleFire.Play();
+            if(sound!=null){
+                sound.Play();
+            }
             LastShoot = Time.time;
             return true;
         }
@@ -64,7 +68,7 @@ public class Weapon : MonoBehaviour
     }
     void Awake()
     {
-
+        sound = GetComponentInChildren<AudioSource>();   
         muzzleFire = GetComponentInChildren<ParticleSystem>();
         muzzleFire.Stop();
         spriteRenderer = GetComponent<SpriteRenderer>();
