@@ -45,10 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2830253e855d38c498deff1549d2899b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AvalibleUnits: []
-  UnitsSpawned: 0
-  Units: []
-  SpawnPoint: {x: 0, y: 0, z: 0}
+  IsAlive: 1
 --- !u!1001 &2618049754116512452
 PrefabInstance:
   m_ObjectHideFlags: 0

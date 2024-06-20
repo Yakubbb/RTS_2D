@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
   canvas: {fileID: 6293960313857572595}
+  UnitCommander: {fileID: 0}
 --- !u!1 &1095566836192521784
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4378499937932100025
 Transform:
   m_ObjectHideFlags: 0

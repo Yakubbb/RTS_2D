@@ -10,19 +10,15 @@ public class UnitSpawner : MonoBehaviour
     public Helmet[] helmets;
     public Weapon[] weapons;
     public int Kolvo;
+    public int spawned = 0;
     void Start()
     {
 
     }
-    void HandleSpawn(){
-        for(int i =0; i < Kolvo; i ++){
-            Spawn();
-        }
-    }
     void Spawn()
     {
-            float x = Random.Range(this.transform.position.x - 10, this.transform.position.x + 10);
-            float y = Random.Range(this.transform.position.y - 10, this.transform.position.y + 10);
+            float x = Random.Range(this.transform.position.x - 50, this.transform.position.x + 50);
+            float y = Random.Range(this.transform.position.y - 50, this.transform.position.y + 50);
             UnitBody newUnit = Instantiate(unit, new Vector3(x, y, 0), Quaternion.identity,this.transform).GetComponentInChildren<UnitBody>();
             newUnit.UnitInventory.Equip(armors[Random.Range(0, armors.Length)].gameObject);
             newUnit.UnitInventory.Equip(helmets[Random.Range(0, helmets.Length)].gameObject);
@@ -34,6 +30,9 @@ public class UnitSpawner : MonoBehaviour
     }
     void Update()
     {
-        HandleSpawn();
+        if(spawned < Kolvo){
+            Spawn();
+            spawned++;
+        }
     }
 }
