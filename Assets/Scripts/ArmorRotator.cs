@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ArmorRotator : MonoBehaviour
 {
-    public SpriteRenderer body;
+    public RotationHandler head;
+    public RotationHandler body;
+    public SpriteRenderer weaponHide;
     Weapon weapon;
     Helmet helmet;
     BodyArmor armor;
@@ -13,6 +17,14 @@ public class ArmorRotator : MonoBehaviour
     {
         if (direction.x < 0)
         {
+            if (head != null)
+            {
+                head.LookRight();
+            }
+            if (body != null)
+            {
+                body.LookRight();
+            }
             if (armor != null)
             {
                 armor.LookRight();
@@ -21,9 +33,28 @@ public class ArmorRotator : MonoBehaviour
             {
                 helmet.LookRight();
             }
+            if (weapon != null)
+            {
+                if (armor != null)
+                {
+                    weapon.spriteRenderer.sortingOrder = armor.SpriteRenderer.sortingOrder + 1;
+                }
+                else
+                {
+                    weapon.spriteRenderer.sortingOrder = weaponHide.sortingOrder + 1;
+                }
+            }
         }
         else if (direction.x > 0)
         {
+            if (head != null)
+            {
+                head.LookLeft();
+            }
+            if (body != null)
+            {
+                body.LookLeft();
+            }
             if (armor != null)
             {
                 armor.LookLeft();
@@ -32,12 +63,32 @@ public class ArmorRotator : MonoBehaviour
             {
                 helmet.LookLeft();
             }
+            if (weapon != null)
+            {
+                if (armor != null)
+                {
+                    weapon.spriteRenderer.sortingOrder = armor.SpriteRenderer.sortingOrder + 1;
+                }
+                else
+                {
+                    weapon.spriteRenderer.sortingOrder = weaponHide.sortingOrder + 1;
+                }
+            }
+
         }
     }
     void HandleHeight(Vector3 direction)
     {
-        if (direction.y < -0.46f)
+        if (direction.y < 0 && Math.Abs(direction.x)<0.4f)
         {
+            if (head != null)
+            {
+                head.LookBehind();
+            }
+            if (body != null)
+            {
+                body.LookBehind();
+            }
             if (armor != null)
             {
                 armor.LookBehind();
@@ -48,11 +99,21 @@ public class ArmorRotator : MonoBehaviour
             }
             if (weapon != null)
             {
-                weapon.spriteRenderer.sortingOrder = body.sortingOrder-1;
+
+                weapon.spriteRenderer.sortingOrder = weaponHide.sortingOrder - 1;
+
             }
         }
-        else if (direction.y > 0.46f)
+        else if (direction.y > 0 && Math.Abs(direction.x)<0.4f)
         {
+            if (head != null)
+            {
+                head.LookFront();
+            }
+            if (body != null)
+            {
+                body.LookFront();
+            }
             if (armor != null)
             {
                 armor.LookFront();
@@ -61,7 +122,18 @@ public class ArmorRotator : MonoBehaviour
             {
                 helmet.LookFront();
             }
-            weapon.spriteRenderer.sortingOrder = body.sortingOrder+1;
+            if (weapon != null)
+            {
+                if (armor != null)
+                {
+                    weapon.spriteRenderer.sortingOrder = armor.SpriteRenderer.sortingOrder + 1;
+                }
+                else
+                {
+                    weapon.spriteRenderer.sortingOrder = weaponHide.sortingOrder + 1;
+                }
+            }
+
         }
     }
 
@@ -69,14 +141,13 @@ public class ArmorRotator : MonoBehaviour
     void Start()
     {
         unitBody = GetComponentInChildren<UnitBody>();
-        Debug.Log(unitBody.UnitInventory);
-        armor = unitBody.UnitInventory.armor;
-        helmet = unitBody.UnitInventory.helmet;
-        weapon = unitBody.UnitInventory.weapon;
     }
     void Update()
     {
-        Vector3 direction = (unitBody.transform.position - unitBody.GoToPoint).normalized;
+        armor = unitBody.UnitInventory.armor;
+        helmet = unitBody.UnitInventory.helmet;
+        weapon = unitBody.UnitInventory.weapon;
+        Vector3 direction = (unitBody.transform.position - unitBody.LookingTarget).normalized;
         Debug.Log(direction);
         HandleWidth(direction);
         HandleHeight(direction);

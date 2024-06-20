@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class PlayerUiCOntroller : MonoBehaviour
 {
+    public GameObject[] buildingsObjects;
+    public TMPro.TMP_Dropdown buildings;
     public TMPro.TMP_Dropdown Ars;
     public TMPro.TMP_Dropdown Pistols;
     public TMPro.TMP_Dropdown Rifles;
@@ -26,6 +28,14 @@ public class PlayerUiCOntroller : MonoBehaviour
     private Color armorDefColor;
     private Color helmetDefColor;
     private Color weaponDefColor;
+    private Building currentBuilding;
+    public void SpawnBuilding(){
+        if(currentBuilding != null){
+            Destroy(currentBuilding.gameObject);
+            currentBuilding = null;
+        }
+        currentBuilding = Instantiate(buildingsObjects[buildings.value],player.BuildingSpawnPoint,Quaternion.identity).GetComponent<Building>();
+    }
     void Awake()
     {
         player = GetComponentInParent<PlayerController>();

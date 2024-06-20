@@ -25,7 +25,7 @@ public class Weapon : MonoBehaviour
     private ParticleSystem muzzleFire;
     public bool IsReadyToShoot()
     {
-        if (Time.time - LastShoot > 60f/FireRate )
+        if (Time.time - LastShoot > 60f / FireRate)
         {
             muzzleFire.Play();
             LastShoot = Time.time;
@@ -33,10 +33,21 @@ public class Weapon : MonoBehaviour
         }
         return false;
     }
-    public void GetWeaponInIdleState()
+    public void GetWeaponInIdleState(float x)
     {
-        MakeWeaponLookLeft();
-        this.transform.rotation = Quaternion.Euler(0, 0, this.DefaultAngle);
+        if( Math.Abs(x) < 0.3){
+            return;
+        }
+        if (x > 0)
+        {
+            MakeWeaponLookLeft();
+            this.transform.rotation = Quaternion.Euler(0, 0, this.DefaultAngle);
+        }
+        else
+        {
+            MakeWeaponLookRight();
+            this.transform.rotation = Quaternion.Euler(0, 0, 100f + this.DefaultAngle);
+        }
 
     }
     public void MakeWeaponLookLeft()
@@ -53,7 +64,7 @@ public class Weapon : MonoBehaviour
     }
     void Awake()
     {
-        
+
         muzzleFire = GetComponentInChildren<ParticleSystem>();
         muzzleFire.Stop();
         spriteRenderer = GetComponent<SpriteRenderer>();

@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     public int Lvl;
     public int Money;
     public int UnitsKolvo;
-    public Vector3 SpawnPoint = new Vector3(30,20,0);
+    public Vector3 BuildingSpawnPoint = new Vector3(-20, 0,0);
+    public Vector3 SpawnPoint = new Vector3(0,0,0);
     void Start()
     {
         

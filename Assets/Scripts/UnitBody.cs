@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.UIElements.Experimental;
 
 public class UnitBody : MonoBehaviour
 {
+    public Vector3 LookingTarget;
     public ColidersController Coliders;
     public bool IsSelected;
     public string UnitName = "aboba";
@@ -46,7 +48,7 @@ public class UnitBody : MonoBehaviour
     private void Start()
     {
         UpdateInventory();
-        GoToPoint = this.transform.position;
+        GoToPoint = new Vector3(this.transform.position.x,this.transform.position.y-1,0);
     }
     private void Update()
     {
@@ -62,6 +64,12 @@ public class UnitBody : MonoBehaviour
         HandleMovement();
         ControllGrenades();
         ControlWeapon();
+        if(IsEnemySpotted()){
+            LookingTarget = Coliders.enemy.transform.position;
+        }
+        else{
+            LookingTarget = GoToPoint;
+        }
 
     }
     public void TakeHeal(int amount){
@@ -104,7 +112,8 @@ public class UnitBody : MonoBehaviour
         }
         else
         {
-            this.weapon.GetWeaponInIdleState();
+            Vector3 direction = (this.transform.position - LookingTarget).normalized;
+            this.weapon.GetWeaponInIdleState(direction.x);
         }
     }
     private void UpdateInventory()
@@ -134,7 +143,7 @@ public class UnitBody : MonoBehaviour
     }
     public void HandleMovement()
     {
-        if (Vector3.Distance(this.transform.position, GoToPoint) < 2)
+        if (Vector3.Distance(this.transform.position, GoToPoint) < 0.3f)
         {
             GoToPoint = this.transform.position;
             return;
