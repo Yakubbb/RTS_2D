@@ -14,7 +14,8 @@ public class EndGamer : MonoBehaviour
     public GameObject canvas;
     public UnitCommander UnitCommander;
     private Text text;
-    void EndGame(string result, Color color){
+    void EndGame(string result, Color color)
+    {
         canvas.SetActive(true);
         text.text = result;
         text.color = color;
@@ -26,15 +27,23 @@ public class EndGamer : MonoBehaviour
         text = canvas.GetComponentInChildren<Text>();
         UnitCommander = FindAnyObjectByType<UnitCommander>();
     }
-    void CheckIfGameEnded(){
-        if(player == null){
+    void CheckIfGameEnded()
+    {
+        if (player == null)
+        {
             return;
         }
-        if(!UnitCommander.IsAlive){
+        if (FindObjectsByType<UnitBody>(FindObjectsSortMode.None).Where(u => u.UnitTeam == player.selectedSide.team).Count(u => !u.IsDead) < 1)
+        {
             EndGame("Вы проиграли", Color.red);
         }
+        if (FindObjectsByType<UnitBody>(FindObjectsSortMode.None).Where(u => u.UnitTeam != player.selectedSide.team).Count(u => !u.IsDead) < 1)
+        {
+            EndGame("Вы выиграли", Color.green);
+        }
     }
-    public void LoadMenu(){
+    public void LoadMenu()
+    {
         SceneManager.LoadScene("MenuScene", LoadSceneMode.Single);
     }
 

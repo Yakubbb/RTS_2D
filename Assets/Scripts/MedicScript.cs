@@ -12,7 +12,7 @@ public class MedicScript : MonoBehaviour
     public UnitBody HealTarget;
     private float LastTimeHeal = 0;
     private bool IsHealing;
-    void Start()
+    void Awake()
     {
         mainAi = GetComponent<UnitBody>();
     }

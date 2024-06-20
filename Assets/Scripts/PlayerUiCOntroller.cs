@@ -30,20 +30,26 @@ public class PlayerUiCOntroller : MonoBehaviour
     private Color helmetDefColor;
     private Color weaponDefColor;
     private Building currentBuilding;
-    private void HandleSpecialUnitInfo(){
-        if(currentBuilding == null || currentBuilding.UnitsLast < 1){
+    private void HandleSpecialUnitInfo()
+    {
+        if (currentBuilding == null || currentBuilding.UnitsLast < 1)
+        {
             specialUnitCanvas.enabled = false;
         }
-        else{
+        else
+        {
             specialUnitCanvas.enabled = true;
         }
     }
-    public void SpawnBuilding(){
-        if(currentBuilding != null){
+    public void SpawnBuilding()
+    {
+        if (currentBuilding != null)
+        {
             Destroy(currentBuilding.gameObject);
             currentBuilding = null;
         }
-        currentBuilding = Instantiate(buildingsObjects[buildings.value],player.BuildingSpawnPoint,Quaternion.identity).GetComponent<Building>();
+        player.TakeMoney(buildings.value * 300 + 300);
+        currentBuilding = Instantiate(buildingsObjects[buildings.value], player.BuildingSpawnPoint, Quaternion.identity).GetComponent<Building>();
     }
     void Awake()
     {
@@ -51,7 +57,7 @@ public class PlayerUiCOntroller : MonoBehaviour
         cnv = GetComponentInChildren<Canvas>();
         camera = GetComponentInParent<CameraController>();
 
-        armorDefColor =  Armor.color;
+        armorDefColor = Armor.color;
         helmetDefColor = Helmet.color;
         weaponDefColor = Weapon.color;
     }
@@ -68,7 +74,7 @@ public class PlayerUiCOntroller : MonoBehaviour
             }
             else
             {
-                Weapon.text =  "Безоружный";
+                Weapon.text = "Безоружный";
             }
             if (camera.selectedUnit.UnitInventory.armor != null)
             {
@@ -113,13 +119,16 @@ public class PlayerUiCOntroller : MonoBehaviour
         switch (Ars.value)
         {
             case 0:
-                player.selectedSide.SpawnLowAR(player.SpawnPoint,Random.Range(10,30),NamesProvider.GetRandomName());
+            if (player.TakeMoney(125))
+                player.selectedSide.SpawnLowAR(player.SpawnPoint, Random.Range(10, 30), NamesProvider.GetRandomName());
                 break;
             case 1:
-                player.selectedSide.SpawnMidAR(player.SpawnPoint,Random.Range(36,65),NamesProvider.GetRandomName());
+            if (player.TakeMoney(200))
+                player.selectedSide.SpawnMidAR(player.SpawnPoint, Random.Range(36, 65), NamesProvider.GetRandomName());
                 break;
             case 2:
-                player.selectedSide.SpawnHighAR(player.SpawnPoint,Random.Range(64,110),NamesProvider.GetRandomName());
+            if (player.TakeMoney(250))
+                player.selectedSide.SpawnHighAR(player.SpawnPoint, Random.Range(64, 110), NamesProvider.GetRandomName());
                 break;
         }
     }
@@ -128,13 +137,16 @@ public class PlayerUiCOntroller : MonoBehaviour
         switch (Pistols.value)
         {
             case 0:
-                player.selectedSide.SpawnLowPistol(player.SpawnPoint,Random.Range(10,30),NamesProvider.GetRandomName());
+                if (player.TakeMoney(75))
+                    player.selectedSide.SpawnLowPistol(player.SpawnPoint, Random.Range(10, 30), NamesProvider.GetRandomName());
                 break;
             case 1:
-                player.selectedSide.SpawnMidPistol(player.SpawnPoint,Random.Range(36,65),NamesProvider.GetRandomName());
+                if (player.TakeMoney(100))
+                    player.selectedSide.SpawnMidPistol(player.SpawnPoint, Random.Range(36, 65), NamesProvider.GetRandomName());
                 break;
             case 2:
-                player.selectedSide.SpawnHighPistol(player.SpawnPoint,Random.Range(64,110),NamesProvider.GetRandomName());
+                if (player.TakeMoney(125))
+                    player.selectedSide.SpawnHighPistol(player.SpawnPoint, Random.Range(64, 110), NamesProvider.GetRandomName());
                 break;
         }
 
@@ -144,19 +156,24 @@ public class PlayerUiCOntroller : MonoBehaviour
         switch (Rifles.value)
         {
             case 0:
-                player.selectedSide.SpawnLowSniper(player.SpawnPoint,Random.Range(10,30),NamesProvider.GetRandomName());
+                if (player.TakeMoney(200))
+                    player.selectedSide.SpawnLowSniper(player.SpawnPoint, Random.Range(10, 30), NamesProvider.GetRandomName());
                 break;
             case 1:
-                player.selectedSide.SpawnMidSniper(player.SpawnPoint,Random.Range(36,65),NamesProvider.GetRandomName());
+                if (player.TakeMoney(300))
+                    player.selectedSide.SpawnMidSniper(player.SpawnPoint, Random.Range(36, 65), NamesProvider.GetRandomName());
                 break;
             case 2:
-                player.selectedSide.SpawnHighSniper(player.SpawnPoint,Random.Range(64,110),NamesProvider.GetRandomName());
+                if (player.TakeMoney(350))
+                    player.selectedSide.SpawnHighSniper(player.SpawnPoint, Random.Range(64, 110), NamesProvider.GetRandomName());
                 break;
         }
 
     }
-    public void SpawnUnitFromBuilding(){
-        if(currentBuilding == null || currentBuilding.UnitsLast < 1){
+    public void SpawnUnitFromBuilding()
+    {
+        if (currentBuilding == null || currentBuilding.UnitsLast < 1)
+        {
             return;
         }
         UnitBody newUnit = Instantiate(currentBuilding.GetSpecialUnit(), player.SpawnPoint, Quaternion.identity).GetComponentInChildren<UnitBody>();

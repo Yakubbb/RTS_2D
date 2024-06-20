@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public PlayerController player;
     public bool HasSelectedUnit = false;
     public UnitBody selectedUnit;
     public float moveSpeed = 5f;
     public float minZoom = 1f;
     public float maxZoom = 10f;
     public float zoomSpeed = 5f;
+    void Awake(){
+        player = GetComponent<PlayerController>();
+    }
     private void HandleZoom()
     {
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
@@ -23,7 +27,7 @@ public class CameraController : MonoBehaviour
     private void HandleLeftClick()
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-        if (hit.collider != null && hit.transform.GetComponentInChildren<UnitBody>() != null && !hit.transform.GetComponentInChildren<UnitBody>().IsDead)
+        if (hit.collider != null && hit.transform.GetComponentInChildren<UnitBody>() != null && !hit.transform.GetComponentInChildren<UnitBody>().IsDead && hit.transform.GetComponentInChildren<UnitBody>().UnitTeam == player.selectedSide.team)
         {
             if (selectedUnit != null)
             {

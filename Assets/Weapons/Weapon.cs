@@ -24,15 +24,20 @@ public class Weapon : MonoBehaviour
     private float localScaleY;
     private ParticleSystem muzzleFire;
     private AudioSource sound;
+    public bool Shooting;
+    private PTRD pTRD;
     public bool IsReadyToShoot()
     {
         if (Time.time - LastShoot > 60f / FireRate)
         {
+            Shooting = true;
             muzzleFire.Play();
             if(sound!=null){
                 sound.Play();
             }
-            LastShoot = Time.time;
+            if(pTRD!=null){
+                pTRD.DoPtrd();
+            }
             return true;
         }
         return false;
@@ -68,6 +73,7 @@ public class Weapon : MonoBehaviour
     }
     void Awake()
     {
+        pTRD = GetComponent<PTRD>();
         sound = GetComponentInChildren<AudioSource>();   
         muzzleFire = GetComponentInChildren<ParticleSystem>();
         muzzleFire.Stop();

@@ -28,8 +28,27 @@ public class UnitBody : MonoBehaviour
     private Helmet helmet;
     private BodyArmor bodyArmor;
     private Weapon weapon;
-    public  DecalsSpawner Decals;
+    public DecalsSpawner Decals;
     private CircleCollider2D range;
+    private PlayerController player;
+    private float LastMovement;
+    private float EnemySpottedTime;
+    private void HandleAi()
+    {
+        if(player == null){
+            return;
+        }
+        if (this.UnitTeam != player.selectedSide.team)
+        {
+            if (this.GoToPoint == this.transform.position && Time.time - LastMovement > 10)
+            {
+                float x = Random.Range(this.transform.position.x - 5, this.transform.position.x + 5);
+                float y = Random.Range(this.transform.position.y - 5, this.transform.position.y + 5);
+                this.GoToPoint = new Vector3(x, y, 0);
+                LastMovement = Time.time - Random.Range(0,3);
+            }
+        }
+    }
     private bool IsArmed()
     {
         return weapon != null;
@@ -40,18 +59,20 @@ public class UnitBody : MonoBehaviour
     }
     private void Awake()
     {
+        player = FindFirstObjectByType<PlayerController>();
         Decals = FindFirstObjectByType<DecalsSpawner>();
         UnitInventory = GetComponent<Inventory>();
         range = Coliders.GetComponent<CircleCollider2D>();
-        Coliders.ColiderTeam = this.UnitTeam;
     }
     private void Start()
     {
         UpdateInventory();
-        GoToPoint = new Vector3(this.transform.position.x,this.transform.position.y-1,0);
+        GoToPoint = new Vector3(this.transform.position.x, this.transform.position.y - 1, 0);
     }
     private void Update()
     {
+        Coliders.ColiderTeam = this.UnitTeam;
+        HandleAi();
         if (IsDead)
         {
             return;
@@ -64,20 +85,24 @@ public class UnitBody : MonoBehaviour
         HandleMovement();
         ControllGrenades();
         ControlWeapon();
-        if(IsEnemySpotted()){
+        if (IsEnemySpotted())
+        {
             LookingTarget = Coliders.enemy.transform.position;
         }
-        else{
+        else
+        {
             LookingTarget = GoToPoint;
         }
 
     }
-    public void TakeHeal(int amount){
-        if(this.Hp + amount > 100){
+    public void TakeHeal(int amount)
+    {
+        if (this.Hp + amount > 100)
+        {
             this.Hp = 100;
             return;
         }
-        this.Hp +=amount;
+        this.Hp += amount;
     }
     private void ControllGrenades()
     {
@@ -88,7 +113,7 @@ public class UnitBody : MonoBehaviour
                 if (Coliders.enemy.IsDead) Coliders.enemy = null;
                 else
                 {
-                    Debug.Log(Coliders.enemy.transform.position,Coliders.enemy.gameObject);
+                    Debug.Log(Coliders.enemy.transform.position, Coliders.enemy.gameObject);
                     UnitInventory.ThrowGrenade(Coliders.enemy.transform.position);
                 }
             }
@@ -106,8 +131,10 @@ public class UnitBody : MonoBehaviour
             if (Coliders.enemy.IsDead) Coliders.enemy = null;
             else
             {
+                Debug.Log("shoot");
                 AimAt(Coliders.enemy.transform.position);
                 Shoot();
+                
             }
         }
         else
@@ -152,7 +179,11 @@ public class UnitBody : MonoBehaviour
         Vector3 newPosition = transform.position + direction * Speed * Time.deltaTime;
         transform.position = newPosition;
     }
-    private bool IsEnemySpotted() => this.Coliders.enemy != null;
+    private bool IsEnemySpotted() { 
+        Debug.Log(this.Coliders.enemy);
+        EnemySpottedTime = Time.time;
+        return this.Coliders.enemy != null;
+    }
     private void Shoot()
     {
         if (weapon.IsReadyToShoot())
@@ -205,13 +236,16 @@ public class UnitBody : MonoBehaviour
         }
         Hp -= damage;
     }
-    public float GetArmorValue(){
+    public float GetArmorValue()
+    {
         float value = 0;
-        if(this.helmet != null){
-            value+=helmet.Hp;
+        if (this.helmet != null)
+        {
+            value += helmet.Hp;
         }
-        if(this.bodyArmor != null){
-            value+=bodyArmor.Hp;
+        if (this.bodyArmor != null)
+        {
+            value += bodyArmor.Hp;
         }
         return value;
     }

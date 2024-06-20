@@ -17,16 +17,17 @@ public class UnitSpawner : MonoBehaviour
     }
     void Spawn()
     {
-            float x = Random.Range(this.transform.position.x - 50, this.transform.position.x + 50);
-            float y = Random.Range(this.transform.position.y - 50, this.transform.position.y + 50);
+            float x = Random.Range(this.transform.position.x - 15, this.transform.position.x + 15);
+            float y = Random.Range(this.transform.position.y - 15, this.transform.position.y + 15);
             UnitBody newUnit = Instantiate(unit, new Vector3(x, y, 0), Quaternion.identity,this.transform).GetComponentInChildren<UnitBody>();
             newUnit.UnitInventory.Equip(armors[Random.Range(0, armors.Length)].gameObject);
             newUnit.UnitInventory.Equip(helmets[Random.Range(0, helmets.Length)].gameObject);
             newUnit.UnitInventory.Equip(weapons[Random.Range(0, weapons.Length)].gameObject);
             newUnit.UnitTeam = team;
-            x = Random.Range(this.transform.position.x - 50, this.transform.position.x + 50);
-            y = Random.Range(this.transform.position.y - 50, this.transform.position.y + 50);
+            x = Random.Range(newUnit.transform.position.x - 15, newUnit.transform.position.x + 15);
+            y = Random.Range(newUnit.transform.position.y - 15, newUnit.transform.position.y + 15);
             newUnit.GoToPoint = new Vector3(x,y,0);
+            newUnit.UnitName = NamesProvider.GetRandomName();
     }
     void Update()
     {

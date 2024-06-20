@@ -12,7 +12,6 @@ public class ColidersController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        this.ColiderTeam = unit.UnitTeam;
         if (this.enemy != null)
         {
             return;
@@ -35,7 +34,6 @@ public class ColidersController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        this.ColiderTeam = unit.UnitTeam;
         if (collision.gameObject.layer != 6)
         {
             return;
