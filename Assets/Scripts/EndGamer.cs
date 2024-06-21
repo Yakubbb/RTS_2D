@@ -44,11 +44,15 @@ public class EndGamer : MonoBehaviour
     }
     public void LoadMenu()
     {
-        SceneManager.LoadScene("MenuScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("MenuScene");
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MenuScene");
+        }
         CheckIfGameEnded();
     }
 }

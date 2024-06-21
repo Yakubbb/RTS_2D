@@ -15,7 +15,8 @@ public class UnitBody : MonoBehaviour
         usec,
         bear,
         scav,
-        aboba
+        aboba,
+        skelet
     }
     public int LastTakenDamage;
     public bool IsDead;
@@ -180,7 +181,7 @@ public class UnitBody : MonoBehaviour
         transform.position = newPosition;
     }
     private bool IsEnemySpotted() { 
-        Debug.Log(this.Coliders.enemy);
+        //Debug.Log(this.Coliders.enemy);
         EnemySpottedTime = Time.time;
         return this.Coliders.enemy != null;
     }

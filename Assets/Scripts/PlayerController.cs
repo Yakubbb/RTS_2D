@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
             LastTimeMoney = Time.time;
             Money+=100;
         }
+        Debug.Log(Settings.HasBlood);
     }
     void Start()
     {

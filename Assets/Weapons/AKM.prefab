@@ -239,6 +239,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   LastShoot: 0
   DefaultAngle: 40
+  Shooting: 0
 --- !u!61 &3665721175512733389
 BoxCollider2D:
   m_ObjectHideFlags: 0

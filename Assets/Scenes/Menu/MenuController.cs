@@ -18,6 +18,7 @@ public class MenuController : MonoBehaviour
     public void HandleBlood(bool value){
         BloodObject.SetActive(value);
         Settings.HasBlood = value;
+        Debug.Log(Settings.HasBlood);
     }
     public void Exit()
     {
@@ -50,7 +51,7 @@ public class MenuController : MonoBehaviour
         mixer.SetFloat("Master", value);
     }
     public void LoadScene(String name){
-        SceneManager.LoadScene(name, LoadSceneMode.Single);
+        SceneManager.LoadScene(name);
     }
     void Update()
     {
